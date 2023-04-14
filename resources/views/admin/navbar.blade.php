@@ -141,6 +141,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="dashboard">Dashboard</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                CRUDS
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="clientes">Clientes</a></li>
+                                <li><a class="dropdown-item" href="servicios">Servicios</a></li>
+                                <li><a class="dropdown-item" href="registros">Registros</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="noticias">Noticias</a>
+                        </li>
                         <form action="/logout" method="POST">
                             @csrf
                             <li class="nav-item">

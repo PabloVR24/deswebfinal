@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('registros', function (Blueprint $table) {
-            $table->id('id_registro');
+            $table->id();
             $table->date('fecha_contrato');
             $table->date('fecha_instalacion');
 
             $table->bigInteger('id_servicio')->unsigned();
-            $table->foreign('id_servicio')->references('id_servicio')->on('servicios');
+            $table->foreign('id_servicio')->references('id')->on('servicios');
 
             $table->bigInteger('id_cliente')->unsigned();
-            $table->foreign('id_cliente')->references('id_cliente')->on('clientes');
+            $table->foreign('id_cliente')->references('id')->on('clientes');
 
             $table->timestamps();
         });
