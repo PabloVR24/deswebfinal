@@ -6,7 +6,8 @@ use App\Http\Controllers\noticiasController;
 use App\Http\Controllers\registrosController;
 use App\Http\Controllers\serviciosController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\BotManController;
+use App\Http\Controllers\sugerenciasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,9 @@ Route::resource('clientes', clientesController::class)->middleware('auth');
 Route::resource('servicios', serviciosController::class)->middleware('auth');
 Route::resource('registros', registrosController::class)->middleware('auth');
 Route::resource('noticias', noticiasController::class)->middleware('auth');
+Route::resource('sugerencias', sugerenciasController::class)->middleware('auth');
+
+Route::view('botmanview', 'botman');
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'run']);
+
+Route::view('todo', 'users.todo')->name('todo');
