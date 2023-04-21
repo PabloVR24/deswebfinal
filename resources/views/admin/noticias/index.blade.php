@@ -2,7 +2,7 @@
 
 @section('contenido')
     <?php
-    $url = 'https://newsapi.org/v2/everything?q=tech&from=2023-04-12&to=2023-04-12&sortBy=popularity&apiKey=15981b3988bc425693188994981f8b2f';
+    $url = 'https://newsapi.org/v2/everything?q=tech&from=2023-04-20&to=2023-04-20&sortBy=popularity&apiKey=15981b3988bc425693188994981f8b2f';
     $response = file_get_contents($url);
     $datos = json_decode($response, true);
     ?>

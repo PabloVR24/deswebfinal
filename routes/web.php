@@ -7,6 +7,7 @@ use App\Http\Controllers\registrosController;
 use App\Http\Controllers\serviciosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BotManController;
+use App\Http\Controllers\ChatBotController;
 use App\Http\Controllers\sugerenciasController;
 
 /*
@@ -34,7 +35,11 @@ Route::resource('registros', registrosController::class)->middleware('auth');
 Route::resource('noticias', noticiasController::class)->middleware('auth');
 Route::resource('sugerencias', sugerenciasController::class)->middleware('auth');
 
-Route::view('botmanview', 'botman');
-Route::match(['get', 'post'], '/botman', [BotManController::class, 'run']);
+Route::view('chatbot', 'chatbot');
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 
-Route::view('todo', 'users.todo')->name('todo');
+Route::view('todo', 'todo');
+Route::get('todo', [noticiasController::class, 'indexGuest']);
+
+
+Route::post('send', [ChatBotController::class, 'sendChat']);

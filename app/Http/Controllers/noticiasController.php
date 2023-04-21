@@ -13,6 +13,12 @@ class noticiasController extends Controller
         return view('admin.noticias.index', ['noticias' => $noticias]);
     }
 
+    public function indexGuest()
+    {
+        $noticias = noticias::orderBy('created_at', 'desc')->get();
+        return view('todo', ['noticias' => $noticias]);
+    }
+
     public function store(Request $request)
     {
         $request->validate([

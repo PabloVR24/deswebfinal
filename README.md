@@ -12,8 +12,8 @@
 
 - Deberá ser responsivo
 
-- ~~Deberá proporcionar el mapa de ubicación geográfica, el punto físico de la empresa (View map) ~~
-**Desde Google Maps insertamos**
+- ~~Deberá proporcionar el mapa de ubicación geográfica, el punto físico de la empresa (View map)
+**Desde Google Maps insertamos**~~
 
 - Generar un video donde explique el objetivo de la página/empresa y cuál es la finalidad, alguna promoción etcétera o consejos, video de 2 a 4 minutos, y claro, ubicarlo en la sección o link que usted crea conveniente en el sitio web. **Hay IAs que nos pueden ayudar a esto**
 

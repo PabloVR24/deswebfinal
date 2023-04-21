@@ -1,7 +1,23 @@
 @extends('users.navbar')
 
 @section('contenido')
-    <br><br><br>
+    <style>
+        .noticias-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .card {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+            width: 18rem;
+        }
+    </style>
+
+    <h3>Slider</h3>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -25,11 +41,12 @@
     </div>
 
     <div class="container">
+        <h3>Mapa</h3>
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14419.355409369973!2d-101.02487863085936!3d25.37671677030438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86887309ac3f0eb7%3A0xa93415b10b6908dc!2sOrelia%20Recepciones!5e0!3m2!1ses-419!2smx!4v1681579581645!5m2!1ses-419!2smx"
             width="100%" height="30%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+        <h3>Acordeon de preguntas frecuentes</h3>
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
@@ -93,6 +110,7 @@
                 </div>
             </div>
             <br><br><br>
+            <h3>Formulario de Sugerencias por correo</h3>
             <form action="https://formsubmit.co/6f3af10b133269e315f637eacf5f7652" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
@@ -119,7 +137,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-
+        <h3>Formulario de Sugerencias</h3>
         <div class="container w-25 border p-4 my-4">
             <div class="row mx-auto">
                 <form action="{{ route('sugerencias.store') }}" id="sugerenciasForm" method="POST">
@@ -127,7 +145,7 @@
                     @if (session('success'))
                         <h6 class="alert alert-success">{{ session('success') }}</h6>
                     @endif
-    
+
                     <div class="mb-3">
                         <label for="autor" class="form-label">Nombre del Sugerido</label>
                         <input type="text" value="{{ old('autor') }}" class="form-control" name="autor">
@@ -135,7 +153,7 @@
                     @error('autor')
                         <h6 class="alert alert-danger">{{ $message }}</h6>
                     @enderror
-    
+
                     <div class="mb-3">
                         <label for="contenido" class="form-label">Contenido</label>
                         <input type="text" value="{{ old('contenido') }}" class="form-control" name="contenido">
@@ -143,7 +161,7 @@
                     @error('contenido')
                         <h6 class="alert alert-danger">{{ $message }}</h6>
                     @enderror
-    
+
                     <div class="mb-3">
                         <label for="calificacion" class="form-label">Calificacion</label>
                         <select name="calificacion" class="form-control" id="calificacion">
@@ -157,10 +175,25 @@
                     @error('calificacion')
                         <h6 class="alert alert-danger">{{ $message }}</h6>
                     @enderror
-    
+
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
-    
+
             </div>
+        </div>
+        <h3>Noticias del día</h3>
+        <div class="noticias-container">
+            <!-- Tarjetas de noticias -->
+            @foreach ($noticias as $noticia)
+                <div class="card" style="width: 18rem;">
+                    <h6><strong>{{ $noticia->publishedAt }}</strong></h6>
+                    <img class="card-img-top" src="{{ $noticia->urlToImage }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $noticia->author }}</h5>
+                        <p class="card-text" style="font-size: 2.5vh">{{ $noticia->title }}</p>
+                        <a href="{{ $noticia->url }}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            @endforeach
         </div>
     @endsection
