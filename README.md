@@ -21,7 +21,7 @@
 
 - ~~Deberá contar con un formulario de contacto por correo electrónico.~~
 
-- Deberá contar con un formulario de sugerencias para la empresa (no correo, tabla interna del sistema), con control captcha. **TABLA EN BASE DE DATOS**
+- ~~Deberá contar con un formulario de sugerencias para la empresa (no correo, tabla interna del sistema), con control captcha. **TABLA EN BASE DE DATOS**~~
 
 - Poder ver ese listado de sugerencias con paginación de sugerencias y exportarlos a Excel y pdf. **Creo que esto esta ya esta en el cursos2023**
 
@@ -29,7 +29,7 @@
 
 - Poder generar la búsqueda y un pdf con la ficha técnica de los datos de cada plan de hosting ofertado.
 
-- Montar un tablero de noticias de forma dinámica, por base de datos. **API DE NOTICIAS**
+- ~~Montar un tablero de noticias de forma dinámica, por base de datos. **API DE NOTICIAS**~~
 
 - Implementar contador de visitas y usuarios conectados. 
 
