@@ -29,7 +29,7 @@
         text-align: center;
     }
 
-    h1 {
+    .h1 {
         font-family: 'Gilroy-Bold', sans-serif;
         font-size: 10vh;
     }
@@ -121,7 +121,6 @@
         color: #244c76;
     }
 
-    h1 {}
 </style>
 
 <body>

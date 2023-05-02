@@ -41,5 +41,14 @@ Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 Route::view('todo', 'todo');
 Route::get('todo', [noticiasController::class, 'indexGuest']);
 
+Route::view('usrservicios', 'users.servicios');
+Route::get('usrservicios', [serviciosController::class, 'indexall']);
+
+Route::get('usrservicios/{id}', [ServiciosController::class, 'findService'])->name('users.servicio');
+
+
+
+Route::get('todo', [noticiasController::class, 'indexGuest']);
+
 
 Route::post('send', [ChatBotController::class, 'sendChat']);
