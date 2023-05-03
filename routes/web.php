@@ -47,7 +47,6 @@ Route::get('usrservicios', [serviciosController::class, 'indexall']);
 Route::get('usrservicios/{id}', [ServiciosController::class, 'findService'])->name('users.servicio');
 
 
-
 Route::get('todo', [noticiasController::class, 'indexGuest']);
 
 
