@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BotManController;
 use App\Http\Controllers\ChatBotController;
 use App\Http\Controllers\sugerenciasController;
-use App\Http\Controllers\templateController;
 
 /*
 |--------------------------------------------------------------------------
