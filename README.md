@@ -1,14 +1,16 @@
 # Proyecto Final: Desarrollo Web
 
 # Instrucciones:
-- Sitio web acorde al diseño (se anexa diseño en photoshop) [Yo creo que hay que cambiarlo, la neta se ve muy feo]
+- Sitio web acorde al diseño (se anexa diseño en photoshop)  
+**Posibilidad de cambio?**
 
-- Implementar estrategia de búsqueda para los servicios que pueda ofrecer la compañía.
+- Implementar estrategia de búsqueda para los servicios que pueda ofrecer la compañía.  
+**¿Que tipo de busqueda, ticket, servicios?**
 
 - ~~Implementar el mantenimiento de datos (altas, bajas y actualizaciones de los registros orientado a los servicios que se ofrecen en el hosting) (solo para administradores).~~
 
-- ~~Los administradores tendrán su forma de autenticación, por lo cual el sitio tendrá actividad pública y privada.~~
-**LOGIN YA LO TENEMOS**
+- ~~Los administradores tendrán su forma de autenticación, por lo cual el sitio tendrá actividad pública y privada.
+**LOGIN YA LO TENEMOS**~~
 
 - Deberá ser responsivo
 
@@ -21,17 +23,20 @@
 
 - ~~Deberá contar con un formulario de contacto por correo electrónico.~~
 
-- ~~Deberá contar con un formulario de sugerencias para la empresa (no correo, tabla interna del sistema), con control captcha. **TABLA EN BASE DE DATOS**~~
+- ~~Deberá contar con un formulario de sugerencias para la empresa (no correo, tabla interna del sistema), con control captcha. **TABLA EN BASE DE DATOS**~~  
+**FALTANTE CAPTCHA**
 
-- Poder ver ese listado de sugerencias con paginación de sugerencias y exportarlos a Excel y pdf. **Creo que esto esta ya esta en el cursos2023**
+- Poder ver ese listado de sugerencias con paginación de sugerencias y exportarlos a Excel y pdf. 
 
 - En la sección clientes, colocar imágenes con respectivo link de compañías que hipotéticamente son tus clientes.
 
-- Poder generar la búsqueda y un pdf con la ficha técnica de los datos de cada plan de hosting ofertado.
+- Poder generar la búsqueda y un pdf con la ficha técnica de los datos de cada plan de hosting ofertado.  
+**¿Esto es el ticket?**
 
 - ~~Montar un tablero de noticias de forma dinámica, por base de datos. **API DE NOTICIAS**~~
 
-- Implementar contador de visitas y usuarios conectados. 
+- Implementar contador de visitas y usuarios conectados.  
+**¿Debe estar desplegado?**
 
 - ~~En la sección de preguntas frecuentes utilizar un control tipo acordeón. **BOOTSTRAP TAMBIEN LO TIENE**~~
 
@@ -39,10 +44,10 @@
 
 - Implementar un chat bot para la ayuda en línea las 24 horas **CHATGPT PUEDE AYUDAR AQUI, PYTHON**
 
-- Cuidar la compatibilidad con los navegadores más importantes. **CREO QUE ESTO ES DE LAS METATAGS Y DE LO DE CSS DE WEBKIT**
+- Cuidar la compatibilidad con los navegadores más importantes. **CREO QUE ESTO ES DE LAS METATAGS Y DE LO DE CSS DE WEBKIT O NO?**
 
 - ~~Implementar la base de datos correspondiente. **Falta definirla**~~
 
 - ~~Implementar estrategia con ORM para las operaciones con la base de datos. **LARAVEL**~~
 
-- Implementar patrón de diseño “Singleton”. **xD**
+- Implementar patrón de diseño “Singleton”. **¿Es posible cambiarlo?**
