@@ -1,0 +1,32 @@
+/* Estilos para el header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* Estilos para el nav horizontal */
+  nav:first-of-type {
+    order: 2;
+  }
+
+  /* Estilos para el nav vertical */
+  nav:last-of-type {
+    order: 3;
+  }
+
+  /* Estilos para el contenedor */
+  #contenido {
+    order: 4;
+  }
+
+  /* Estilos para el slider */
+  #slider {
+    order: 5;
+  }
+
+  /* Estilos para el footer */
+  footer {
+    order: 6;
+  }
