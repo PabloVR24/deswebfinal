@@ -15,6 +15,10 @@
                     <h6 class="alert alert-danger">{{ $message }}</h6>
                 @enderror
                 <div class="mb-3">
+                    <label for="id" class="form-label">id:</label>
+                    <input type="text" class="form-control" name="id" value="{{ $registro->id }}">
+                </div>
+                <div class="mb-3">
                     <label for="fecha_contrato" class="form-label">fecha_contrato:</label>
                     <input type="text" class="form-control" name="fecha_contrato" value="{{ $registro->fecha_contrato }}">
                 </div>

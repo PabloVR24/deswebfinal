@@ -10,11 +10,12 @@ class registros extends Model
     use HasFactory;
     public function servicios()
     {
-        return $this->hasMany(servicios::class);
+        return $this->belongsTo(servicios::class, 'id_servicio');;
+        
     }
 
     public function cliente()
     {
-        return $this->belongsTo(Cliente::class);
+        return $this->belongsTo(clientes::class, 'id_cliente');
     }
 }

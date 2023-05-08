@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\registros;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use App\Models\clientes;
 use App\Models\servicios;
+use Illuminate\Support\Facades\DB;
 
 class registrosController extends Controller
 {
@@ -45,6 +47,19 @@ class registrosController extends Controller
         return view('admin.registros.show',  ['registro' => $registro, 'clientes' => $clientes, 'servicios' => $servicios]);
     }
 
+    public function findregister(Request $request)
+    {
+        $texto = trim($request->get('texto'));
+        if (empty($texto)) {
+            $registros = collect();
+        } else {
+            $registros = registros::where('id', 'LIKE', '%' . $texto . '%')->get();
+        }
+        return view('users.search', compact('registros', 'texto'))->with('registros', $registros);
+    }
+
+
+
     public function update(Request $request, string $id)
     {
         $registro = registros::find($id);
@@ -59,11 +74,17 @@ class registrosController extends Controller
     public function destroy(string $id)
     {
         $registro = registros::find($id);
-        // $category->todos()->each(function ($todo) {
-        //     $todo->delete();
-        // });
         $registro->delete();
-
         return redirect()->route('registros.index')->with('success', 'Categoria Eliminada');
+    }
+
+    public function export(string $id)
+    {
+        $registro = registros::find($id);
+        $data = [
+            'registro' => $registro
+        ];
+        $pdf = Pdf::loadView('users.export', $data);
+        return $pdf->stream('REG' . $id . '.pdf');
     }
 }
