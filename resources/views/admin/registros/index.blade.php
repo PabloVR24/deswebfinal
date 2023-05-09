@@ -117,8 +117,9 @@
                                     class="d-flex align-items-center gap-2">{{ $registro->id }}</a></td>
                             <td>{{ $registro->fecha_contrato }}</td>
                             <td>{{ $registro->fecha_instalacion }}</td>
-                            <td>{{ $registro->id_cliente }}</td>
-                            <td>{{ $registro->id_servicio }}</td>
+                            <td>{{ $registro->cliente->nombre_cliente . ' ' . $registro->cliente->apellido_pat . ' ' . $registro->cliente->apellido_mat }}
+                            </td>
+                            <td>{{ $registro->servicios->nombre_servicio }}</td>
 
                             <td><button class="btn btn-danger btn-sm" data-bs-toggle="modal"
                                     data-bs-target="#modal-{{ $registro->id }}">Eliminar</button></td>

@@ -10,6 +10,18 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
 </head>
+@php
+    $archivo = public_path('archivo.txt');
+    $contador = intval(file_get_contents($archivo));
+    
+    $file = fopen($archivo, 'w');
+    fwrite($file, $contador + 1 . PHP_EOL);
+    fclose($file);
+    
+    $file = fopen($archivo, 'r');
+    echo 'Visitas:' . fgets($file);
+@endphp
+
 
 <body>
     <!-- Header -->

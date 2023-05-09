@@ -15,13 +15,10 @@ return new class extends Migration
             $table->id();
             $table->date('fecha_contrato');
             $table->date('fecha_instalacion');
-
             $table->bigInteger('id_servicio')->unsigned();
             $table->foreign('id_servicio')->references('id')->on('servicios');
-
             $table->bigInteger('id_cliente')->unsigned();
             $table->foreign('id_cliente')->references('id')->on('clientes');
-
             $table->timestamps();
         });
     }
