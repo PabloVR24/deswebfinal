@@ -14,7 +14,7 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <img src="logo.png" alt="StellarHost Logo">
+        <img src="logo.png" id="logo" alt="StellarHost Logo">
         <h1>StellarHost</h1>
         <button> Ayuda en línea </button>
         <p>Contacto de Ventas: 8441071532</p>
