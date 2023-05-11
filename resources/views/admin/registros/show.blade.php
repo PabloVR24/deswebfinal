@@ -16,15 +16,15 @@
                 @enderror
                 <div class="mb-3">
                     <label for="id" class="form-label">id:</label>
-                    <input type="text" class="form-control" name="id" value="{{ $registro->id }}">
+                    <input type="text" disabled class="form-control" name="id" value="{{ $registro->id }}">
                 </div>
                 <div class="mb-3">
                     <label for="fecha_contrato" class="form-label">fecha_contrato:</label>
-                    <input type="text" class="form-control" name="fecha_contrato" value="{{ $registro->fecha_contrato }}">
+                    <input type="date" class="form-control" name="fecha_contrato" value="{{ $registro->fecha_contrato }}">
                 </div>
                 <div class="mb-3">
                     <label for="fecha_instalacion" class="form-label">fecha_instalacion</label>
-                    <input type="text" class="form-control" name="fecha_instalacion"
+                    <input type="date" class="form-control" name="fecha_instalacion"
                         value="{{ $registro->fecha_instalacion }}">
                 </div>
                 <label for="id_cliente" class="form-label">ID_CLIENTE</label>

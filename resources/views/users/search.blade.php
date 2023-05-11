@@ -4,7 +4,7 @@
 <h1>Busqueda de ticket</h1>
 
 <form id="searchForm" action="{{ route('findRegister') }}" method="GET">
-    <input type="text" name="texto" class="form-control" value="{{ $texto }}">
+    <input type="text" name="texto" id="texto" class="form-control" value="{{ $texto }}">
     <input type="submit" value="Buscar">
 </form>
 
@@ -34,7 +34,7 @@
                     <td>{{ $registro->id_servicio }}</td>
                     <td>
                         <form action="{{ route('export', ['id' => $registro->id]) }}">
-                            <input type="text"  name="id" hidden value="{{$registro->id}}">
+                            <input type="text" name="id" hidden value="{{ $registro->id }}">
                             <input type="submit" value="Generar PDF">
                         </form>
                     </td>

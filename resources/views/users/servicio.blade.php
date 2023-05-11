@@ -15,4 +15,8 @@
     @foreach ($beneficios as $beneficio)
         <li class="list" style="list-style: none; font-size: 2.4vh">{{ $beneficio }}</li>
     @endforeach
+    <form action="{{ route('exportsrv', ['id' => $servicio->id]) }}">
+        <input type="text"  name="id" hidden value="{{$servicio->id}}">
+        <input type="submit" value="Generar PDF">
+    </form>
 @endsection

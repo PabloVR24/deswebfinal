@@ -11,7 +11,6 @@
         });
     </script>
 
-
     <div class="container w-25 border p-4 my-4">
         <div class="row mx-auto">
             <form action="{{ route('registros.store') }}" method="POST">
@@ -19,23 +18,6 @@
                 @if (session('success'))
                     <h6 class="alert alert-success">{{ session('success') }}</h6>
                 @endif
-
-                <div class="mb-3">
-                    <label for="fecha_contrato" class="form-label">Fecha_Contrato</label>
-                    <input type="date" value="{{ old('fecha_contrato') }}" class="form-control" name="fecha_contrato">
-                </div>
-                @error('fecha_contrato')
-                    <h6 class="alert alert-danger">{{ $message }}</h6>
-                @enderror
-
-                <div class="mb-3">
-                    <label for="fecha_instalacion" class="form-label">Fecha_Instalacion</label>
-                    <input type="date" value="{{ old('fecha_instalacion') }}" class="form-control"
-                        name="fecha_instalacion">
-                </div>
-                @error('fecha_instalacion')
-                    <h6 class="alert alert-danger">{{ $message }}</h6>
-                @enderror
 
                 <label for="id_cliente" class="form-label">ID_CLIENTE</label>
                 <select name="id_cliente" class="form-select">
@@ -58,7 +40,7 @@
                 @error('id_servicio')
                     <h6 class="alert alert-danger">{{ $message }}</h6>
                 @enderror
-
+                <br><br>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
 

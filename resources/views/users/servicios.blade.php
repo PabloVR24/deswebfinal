@@ -1,34 +1,15 @@
 @extends('users.template')
-@section('slider')
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{ URL::asset('images/taini.png') }}" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ URL::asset('images/badbo.png') }}" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ URL::asset('images/taini2.png') }}" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-@endsection
+
 @section('contenido')
-    <h4>Maximo rendimiento y flexibilidad para tus proyectos web</h4>
-    <h5 style="color: red;">¡Aprovecha nuestras ofertas de por vida!</h5>
+    <div class="" style="text-align: center; margin-top: 1rem;">
+        <h4>Maximo rendimiento y flexibilidad para tus proyectos web</h4>
+        <h5 style="color: red;">¡Aprovecha nuestras ofertas de por vida!</h5>
+    </div>
+
     <div class="d-flex flex-wrap justify-content-center">
         @foreach ($servicios as $servicio)
             <div class="ctnr">
-                <div class="card mt-4 mr-2" style="width: 18rem;">
+                <div class="card mt-4 mr-2" style="width: 18rem; height: 27rem; margin: 0.2rem;">
                     <div class="card-body mr-2">
                         <div class="title" style="background-color: red; color: white; text-align: center">
                             <h5 class="card-title">{{ $servicio->nombre_servicio }}</h5>

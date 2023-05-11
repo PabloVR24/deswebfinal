@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\servicios;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class serviciosController extends Controller
 {
@@ -72,5 +73,14 @@ class serviciosController extends Controller
         $servicio->delete();
 
         return redirect()->route('servicios.index')->with('success', 'Categoria Eliminada');
+    }
+    public function export(string $id)
+    {
+        $servicio = servicios::find($id);
+        $data = [
+            'servicio' => $servicio
+        ];
+        $pdf = Pdf::loadView('users.exportservice', $data);
+        return $pdf->stream('SRV' . $id . '.pdf');
     }
 }
