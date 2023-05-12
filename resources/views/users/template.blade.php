@@ -45,11 +45,11 @@
             <h4 class="navVTit">Asistencia tecnica 24/7</h4>
             <ul>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> language</span> Web
+                    <a href="{{route("web_hosting")}}"><span class="material-symbols-outlined"> language</span> Web
                         Hosting</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> dns </span> Servidor
+                    <a href="{{route("servidor_dedicado")}}"><span class="material-symbols-outlined"> dns </span> Servidor
                         Dedicado</a>
                 </li>
                 <li>
@@ -89,24 +89,24 @@
             @php
                 $archivo = public_path('archivo.txt');
                 $contador = intval(file_get_contents($archivo));
-                
+
                 $file = fopen($archivo, 'w');
                 fwrite($file, $contador + 1 . PHP_EOL);
                 fclose($file);
-                
+
                 $file = fopen($archivo, 'r');
-                
+
             @endphp
             <div class="Contadores">
                 <p class="CVisitas">
                     <span class="material-symbols-outlined"> person_add </span>
-                    Conectados:
-                </p>
-
-                <p class="CConectados">
-                    <span class="material-symbols-outlined"> communication </span>
                     Visitas: {{ fgets($file) }}
                 </p>
+
+                {{-- <p class="Conectados">
+                    <span class="material-symbols-outlined"> communication </span>
+                    Conectados:
+                </p> --}}
             </div>
         </nav>
 

@@ -9,6 +9,8 @@ body {
   font-family: "Public Sans", sans-serif;
   font-size: 1.2rem;
   min-height: 100%;
+  background: rgb(196,192,192);
+background: radial-gradient(circle, rgba(196,192,192,1) 7%, rgba(155,152,152,1) 34%, rgba(196,192,192,1) 100%);
 }
 
 .grid-container > * {
@@ -20,7 +22,6 @@ body {
 
 .header {
   grid-area: header;
-  background-color: #a1a1a0;
 }
 
 #HelpBut {
@@ -35,15 +36,14 @@ body {
 }
 
 #logo {
-  margin-top: 1%;
+  margin-top: 3%;
   margin-left: 5%;
-  width: 7%;
+  width: 10%;
   height: auto; /* Esto asegura que la proporción del logo se mantenga al reducir su ancho */
 }
 
 .navH {
   grid-area: navbar;
-  background-color: #a1a1a0;
 }
 
 .navH ul {
@@ -118,7 +118,8 @@ body {
 
 .footer {
   grid-area: footer;
-  background-color: #8c96a0;
+  background: rgb(196,192,192);
+background: radial-gradient(circle, rgba(196,192,192,1) 7%, rgba(155,152,152,1) 34%, rgba(196,192,192,1) 100%);
 }
 
 /* Estilos para el header */
@@ -137,9 +138,9 @@ nav:first-of-type {
 }
 
 .contenedor {
+    background-image: radial-gradient(circle, #ffffff, #eae9eb, #d7d4d6, #c5bfc0, #b3aaaa);
   display: flex;
   width: 100%;
-  background-color: antiquewhite;
   margin-right: 0%;
   margin-left: 0%;
 }
@@ -192,7 +193,9 @@ nav:first-of-type {
 }
 
 .derechaTXT{
-  background-color: #fff;
+    background-color: #FFDEE9;
+background-image: linear-gradient(90deg, #FFDEE9 0%, #B5FFFC 72%);
+
   margin-left: 3%;
   margin-right: 3%;
   border: 1px solid #000;
@@ -211,9 +214,10 @@ nav:first-of-type {
 footer {
   display: flex;
   width: 100%;
-  background-color: c4c0c0;
   margin-right: 0%;
   margin-left: 0%;
+  background: rgb(196,192,192);
+background: radial-gradient(circle, rgba(196,192,192,1) 7%, rgba(155,152,152,1) 34%, rgba(196,192,192,1) 100%);
 }
 
 .columna20 {
@@ -273,7 +277,7 @@ footer {
   text-align: center;
   -webkit-text-stroke: .020px rgb(0, 0, 0);
   -webkit-text-fill-color: rgb(0, 0, 0);
-  
+
 }
 
 .FooterH3{
@@ -390,7 +394,7 @@ textarea{
   .contenedor {
     flex-direction: column;
   }
-  
+
   .navV {
     width: 100%;
     order: 2;
@@ -399,25 +403,25 @@ textarea{
   .navVTit{
     font-size: 2rem;
   }
-  
+
   .main {
     width: 100%;
     order: 3;
   }
-  
+
   .derecha {
     width: 100%;
     order: 4;
   }
-  
+
   .navH {
     display: none;
   }
-  
+
   .navV li {
     margin: 2% 0;
   }
-  
+
   .Contadores {
     margin-top: 10%;
     margin-bottom: 10%;

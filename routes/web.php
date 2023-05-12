@@ -12,11 +12,16 @@ use App\Http\Controllers\sugerenciasController;
 Route::view('/', 'users.template');
 Route::view('login', 'admin.login')->name('login')->middleware('guest');
 Route::view('template', 'users.template');
-Route::view('todo', 'todo');
-Route::view('usrservicios', 'users.servicios');
-Route::view('client', 'users.client');
-Route::view('hire', 'users.hire')->name('hire');
-Route::view('success', 'users.success')->name('success');
+Route::view('web_hosting', 'users.web_hosting')->name('web_hosting');
+Route::view('servidor_dedicado', 'users.servidor_dedicado')->name('servidor_dedicado');
+Route::view('poliza', 'users.poliza')->name('poliza');
+Route::view('Por_que_nosotros', 'users.Por_que_nosotros')->name('Por_que_nosotros');
+Route::view('centro_de_ayuda', 'users.centro_de_ayuda')->name('centro_de_ayuda');
+Route::view('dominios', 'users.dominios')->name('dominios');
+Route::view('mas_servicios', 'users.mas_servicios')->name('mas_servicios');
+Route::view('tecnologia', 'users.tecnologia')->name('tecnologia');
+Route::view('resellers', 'users.resellers')->name('resellers');
+Route::view('FAQ', 'users.FAQ')->name('FAQ');
 
 
 //RESOURCES
