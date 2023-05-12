@@ -160,7 +160,7 @@
                             <a href="https://www.google.com">Términos y condiciones</a>
                         </h3>
                         <h3 class="FooterH3">
-                            <a href="https://www.google.com">Transferencia de dominios</a>
+                            <a href="https://www.google.com">Transferencia de  dominios</a>
                         </h3>
                     </div>
                     <div class="C2">
