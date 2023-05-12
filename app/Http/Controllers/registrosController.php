@@ -101,8 +101,16 @@ class registrosController extends Controller
             ->whereBetween('fecha_instalacion', [$fechaInicio, $fechaFin])
             ->groupBy('id_cliente')
             ->get();
-        return view('admin.dashboard', compact('registros', 'conteo'));
+        $conteouno = registros::select('id_cliente', registros::raw('count(*) as total_registros_usuario'))
+            ->groupBy('id_cliente')
+            ->get();
+        $conteodos = registros::select('id_servicio', registros::raw('count(*) as total_registros_servicios'))
+            ->groupBy('id_servicio')
+            ->get();
+
+        return view('admin.dashboard', compact('registros', 'conteo', 'conteouno', 'conteodos'));
     }
+
 
 
     public function destroy(string $id)
