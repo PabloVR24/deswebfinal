@@ -22,6 +22,12 @@ Route::view('mas_servicios', 'users.mas_servicios')->name('mas_servicios');
 Route::view('tecnologia', 'users.tecnologia')->name('tecnologia');
 Route::view('resellers', 'users.resellers')->name('resellers');
 Route::view('FAQ', 'users.FAQ')->name('FAQ');
+Route::view('todo', 'todo');
+Route::view('usrservicios', 'users.servicios');
+Route::view('client', 'users.client');
+Route::view('hire', 'users.hire')->name('hire');
+Route::view('success', 'users.success')->name('success');
+Route::view('export', 'users.export')->name('export');
 
 
 //RESOURCES

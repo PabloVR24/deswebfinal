@@ -80,7 +80,9 @@ class serviciosController extends Controller
         $data = [
             'servicio' => $servicio
         ];
+        ;
         $pdf = Pdf::loadView('users.exportservice', $data);
+        $pdf->set_base_path(asset('css/export.css'));
         return $pdf->stream('SRV' . $id . '.pdf');
     }
 }
