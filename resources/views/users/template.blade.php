@@ -13,9 +13,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
+    <div class="g-recaptcha" data-sitekey="6LewTAImAAAAAPpjdzHBUpYbbLfjjTJYTjQGL85K"></div>
+
     <!-- Header -->
     <header class="header">
         <img src="{{ URL::asset('images/logo.png') }}" id="logo" alt="StellarHost Logo" />
@@ -45,44 +48,49 @@
             <h4 class="navVTit">Asistencia tecnica 24/7</h4>
             <ul>
                 <li>
-                    <a href="{{route("web_hosting")}}"><span class="material-symbols-outlined"> language</span> Web
+                    <a href="{{ route('web_hosting') }}"><span class="material-symbols-outlined"> language</span> Web
                         Hosting</a>
                 </li>
                 <li>
-                    <a href="{{route("servidor_dedicado")}}"><span class="material-symbols-outlined"> dns </span> Servidor
+                    <a href="{{ route('servidor_dedicado') }}"><span class="material-symbols-outlined"> dns </span>
+                        Servidor
                         Dedicado</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> verified </span> Póliza
+                    <a href="{{ route('poliza') }}"><span class="material-symbols-outlined"> verified </span> Póliza
                         de Garantías</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> help </span> Por Qué
+                    <a href="{{ route('Por_que_nosotros') }}"><span class="material-symbols-outlined"> help </span> Por
+                        Qué
                         Nosotros</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> phone_in_talk </span>
+                    <a href="{{ route('centro_de_ayuda') }}"><span class="material-symbols-outlined"> phone_in_talk
+                        </span>
                         Centro de Ayuda</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> http </span> Dominios</a>
+                    <a href="{{ route('dominios') }}"><span class="material-symbols-outlined"> http </span> Dominios</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> library_add </span> Más
+                    <a href="{{ route('mas_servicios') }}"><span class="material-symbols-outlined"> library_add </span>
+                        Más
                         Servicios</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> settings_suggest </span>
+                    <a href="{{ route('tecnologia') }}"><span class="material-symbols-outlined"> settings_suggest
+                        </span>
                         Tecnología</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined">
+                    <a href="{{ route('resellers') }}"><span class="material-symbols-outlined">
                             currency_exchange
                         </span>
                         Resellers</a>
                 </li>
                 <li>
-                    <a href="#"><span class="material-symbols-outlined"> psychology_alt </span>
+                    <a href="{{ route('FAQ') }}"><span class="material-symbols-outlined"> psychology_alt </span>
                         FAQ</a>
                 </li>
             </ul>
