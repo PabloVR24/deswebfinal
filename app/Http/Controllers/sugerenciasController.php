@@ -22,13 +22,13 @@ class sugerenciasController extends Controller
         $request->validate([
             'autor' => 'required|string|min:3|max:255',
             'contenido' => 'required|string|min:3|max:500',
-            'calificacion' => 'required|numeric|min:1|max:5',
+            'email' => 'required|email',
         ]);
 
         $sugerencia = new sugerencias;
         $sugerencia->autor = $request->autor;
         $sugerencia->contenido = $request->contenido;
-        $sugerencia->calificacion = $request->calificacion;
+        $sugerencia->email = $request->email;
         $sugerencia->save();
         return back()->withInput()->with('success', 'Sugerencia Registrada Exitosamente');
 

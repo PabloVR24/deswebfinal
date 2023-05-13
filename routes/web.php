@@ -28,6 +28,7 @@ Route::view('client', 'users.client');
 Route::view('hire', 'users.hire')->name('hire');
 Route::view('success', 'users.success')->name('success');
 Route::view('export', 'users.export')->name('export');
+Route::view('sugerencias', 'admin.sugerencias')->name('sugerencias');
 
 
 //RESOURCES
@@ -49,6 +50,7 @@ Route::get('exportsrv/{id}', [serviciosController::class, 'export'])->name('expo
 Route::get('client', [clientesController::class, 'findregister'])->name('client');
 Route::get('findClient', [registrosController::class, 'findClient'])->name('findClient');
 Route::get('todo', [noticiasController::class, 'indexGuest']);
+
 
 
 //POST

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\noticias;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class noticiasController extends Controller
 {
@@ -58,6 +59,22 @@ class noticiasController extends Controller
         return redirect()->route('noticias.index')->with('success', 'Actualizado Correctamente');
     }
 
+
+    public function getNews()
+    {
+        $url = 'https://newsapi.org/v2/everything?q=tech&from=2023-04-20&to=2023-04-20&sortBy=popularity&apiKey=15981b3988bc425693188994981f8b2f';
+
+        $client = new Client();
+        $response = $client->get($url);
+
+        $data = json_decode($response->getBody(), true);
+
+        // Procesa los datos según sea necesario
+
+        return response()->json($data);
+    }
+
+
     public function destroy(string $id)
     {
         $noticia = noticias::find($id);
@@ -66,6 +83,6 @@ class noticiasController extends Controller
         // });
         $noticia->delete();
 
-        return redirect()->route('servicios.index')->with('success', 'Categoria Eliminada');
+        return redirect()->route('noticias.index')->with('success', 'Categoria Eliminada');
     }
 }

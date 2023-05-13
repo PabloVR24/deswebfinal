@@ -29,7 +29,7 @@
 
     @if ($clientes->isEmpty())
         <style>
-            .cont-form {
+            .cont-form { 
                 display: flex;
                 flex-direction: column;
                 justify-content: center;

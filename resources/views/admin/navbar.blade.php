@@ -155,6 +155,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="noticias">Noticias</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sugerencias">Sugerencias</a>
+                        </li>
                         <form action="/logout" method="POST">
                             @csrf
                             <li class="nav-item">

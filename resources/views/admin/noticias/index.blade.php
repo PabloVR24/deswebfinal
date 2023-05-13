@@ -5,6 +5,7 @@
     $url = 'https://newsapi.org/v2/everything?q=tech&from=2023-04-20&to=2023-04-20&sortBy=popularity&apiKey=15981b3988bc425693188994981f8b2f';
     $response = file_get_contents($url);
     $datos = json_decode($response, true);
+    
     ?>
     <link href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/r-2.4.1/datatables.min.css" rel="stylesheet" />
     <script src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/r-2.4.1/datatables.min.js"></script>

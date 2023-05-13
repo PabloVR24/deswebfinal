@@ -97,13 +97,13 @@
             @php
                 $archivo = public_path('archivo.txt');
                 $contador = intval(file_get_contents($archivo));
-
+                
                 $file = fopen($archivo, 'w');
                 fwrite($file, $contador + 1 . PHP_EOL);
                 fclose($file);
-
+                
                 $file = fopen($archivo, 'r');
-
+                
             @endphp
             <div class="Contadores">
                 <p class="CVisitas">
@@ -202,21 +202,43 @@
                     </div>
                 </div>
                 <div class="raw2">
-                    <form class="FORMFOOTER">
+                    <form class="FORMFOOTER" action="{{ route('sugerencias.store') }}" id="sugerenciasForm"
+                        method="POST">
                         <div class="FORM1">
+                            @csrf
+                            @if (session('success'))
+                                <h6 class="alert alert-success">{{ session('success') }}</h6>
+                            @endif
                             <div>
+
                                 <label for="Nombre">Nombre:</label>
-                                <input type="text" id="Nombre" name="Nombre">
+                                <input type="text" value="{{ old('autor') }}" class="form-control"
+                                    name="autor">
                             </div>
-                            <div>
+
+                            <div style="margin-top: 0.5rem;">
+
                                 <label for="email">Correo:</label>
-                                <input type="email" id="email" name="email">
+                                <input type="email" id="email" name="email" class="form-control">
+
                             </div>
-                            <button class="SEND" type="submit">Enviar Sugerencia</button>
+
+                            <button class="SEND btn btn-light" type="submit">Enviar Sugerencia</button>
                         </div>
                         <div class="FORM2">
-                            <label for="sugerencia">Sugerencia o mensaje:</label>
-                            <textarea id="sugerencia" name="sugerencia"></textarea>
+                            <label for="contenido">Sugerencia o mensaje:</label>
+                            <textarea value="{{ old('contenido') }}" class="form-control" name="contenido"></textarea>
+                            @error('contenido')
+                                <h6 style="color: red;">{{ $message }}</h6>
+                            @enderror
+                            @error('email')
+                                <h6 style="color: red;">{{ $message }}</h6>
+                            @enderror
+
+                            @error('autor')
+                                <h6 style="color: red;">{{ $message }}</h6>
+                            @enderror
+                            {{-- <div class="g-recaptcha" data-sitekey="6LewTAImAAAAAPpjdzHBUpYbbLfjjTJYTjQGL85K"></div> --}}
                         </div>
                     </form>
                 </div>

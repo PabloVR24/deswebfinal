@@ -18,8 +18,8 @@
                     <tr>
                         <th>ID</th>
                         <th>NOMBRE</th>
+                        <th>CORREO</th>
                         <th>CONTENIDO</th>
-                        <th>CALIFICACION</th>
                     </tr>
                 </thead>
                 <tbody id="tablaRegistros">
@@ -27,9 +27,8 @@
                         <tr>
                             <td>{{ $sugerencia->id }}</td>
                             <td>{{ $sugerencia->autor }}</td>
+                            <td>{{ $sugerencia->email }}</td>
                             <td>{{ $sugerencia->contenido }}</td>
-                            <td>{{ $sugerencia->calificacion }}</td>
-                            
                         </tr>
                     @endforeach
                 </tbody>

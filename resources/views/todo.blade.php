@@ -111,7 +111,7 @@
             </div>
             <br><br><br>
             <h3>Formulario de Sugerencias por correo</h3>
-            <form action="https://formsubmit.co/6f3af10b133269e315f637eacf5f7652" method="POST">
+            <form action="pavara_2010@hotmail.com" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
                     <input type="name" class="form-control" id="name" name="name">
