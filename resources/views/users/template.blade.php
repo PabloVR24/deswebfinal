@@ -17,8 +17,6 @@
 </head>
 
 <body>
-    <div class="g-recaptcha" data-sitekey="6LewTAImAAAAAPpjdzHBUpYbbLfjjTJYTjQGL85K"></div>
-
     <!-- Header -->
     <header class="header">
         <img src="{{ URL::asset('images/logo.png') }}" id="logo" alt="StellarHost Logo" />
@@ -160,7 +158,7 @@
                             <a href="https://www.google.com">Términos y condiciones</a>
                         </h3>
                         <h3 class="FooterH3">
-                            <a href="https://www.google.com">Transferencia de  dominios</a>
+                            <a href="https://www.google.com">Transferencia de dominios</a>
                         </h3>
                     </div>
                     <div class="C2">
@@ -217,7 +215,6 @@
                             </div>
 
                             <div style="margin-top: 0.5rem;">
-
                                 <label for="email">Correo:</label>
                                 <input type="email" id="email" name="email" class="form-control">
 
