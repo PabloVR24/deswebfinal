@@ -5,7 +5,7 @@
     <script src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/r-2.4.1/datatables.min.js"></script>
     <div class="container w-25 border p-4 my-4">
         <div class="row mx-auto">
-            <form id= "servicios_form" action="{{ route('servicios.update', ['servicio' => $servicio->id]) }}" method="POST">
+            <form id="servicios_form" action="{{ route('servicios.update', ['servicio' => $servicio->id]) }}" method="POST">
 
                 @method('PATCH')
                 @csrf
@@ -20,12 +20,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="frase_servicio" class="form-label">frase_servicio</label>
-                    <input type="text" value="{{ old('frase_servicio') }}" class="form-control" name="frase_servicio">
+                    <input type="text" value="{{ $servicio->frase_servicio }}" class="form-control" name="frase_servicio">
                 </div>
 
                 <div class="mb-3">
                     <label for="precio_oferta" class="form-label">precio_oferta</label>
-                    <input type="text" value="{{ old('precio_oferta') }}" class="form-control" name="precio_oferta">
+                    <input type="text"  value="{{ $servicio->precio_oferta }}" class="form-control" name="precio_oferta">
                 </div>
 
                 <div class="mb-3">
@@ -40,6 +40,16 @@
                 @error('beneficios_servicio')
                     <h6 class="alert alert-danger">{{ $message }}</h6>
                 @enderror
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <select name="categoria" class="form-control">
+                        <option value="PAQUETE">PAQUETE</option>
+                        <option value="HOSTING">HOSTING</option>
+                        <option value="DOMINIO">DOMINIO</option>
+                        <option value="DEDICADO">SERVIDOR DEDICADO</option>
+                        <option value="CLOUD">CLOUD HOSTING</option>
+                    </select>
+                </div>
                 @php
                     $beneficios = explode('/', $servicio->beneficios_servicio);
                 @endphp

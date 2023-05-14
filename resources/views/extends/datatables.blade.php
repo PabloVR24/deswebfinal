@@ -4,12 +4,20 @@
 <script>
     $(document).ready(function() {
         $('#noticiasTable').DataTable({
-            responsive: true
+            responsive: true,
+            pageLength: 5,
+            language: {
+                search: "Buscar:",
+            },
+            "lengthChange": false
         });
-    
+
         $('#alumnosTable').DataTable({
             responsive: true,
-            searching: false, 
+            searching: false,
+            language: {
+                search: "Buscar:",
+            }
         });
     });
 </script>

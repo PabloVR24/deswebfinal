@@ -12,12 +12,9 @@ use App\Http\Controllers\sugerenciasController;
 Route::view('/', 'users.template');
 Route::view('login', 'admin.login')->name('login')->middleware('guest');
 Route::view('template', 'users.template');
-Route::view('web_hosting', 'users.web_hosting')->name('web_hosting');
-Route::view('servidor_dedicado', 'users.servidor_dedicado')->name('servidor_dedicado');
 Route::view('poliza', 'users.poliza')->name('poliza');
 Route::view('Por_que_nosotros', 'users.Por_que_nosotros')->name('Por_que_nosotros');
-Route::view('centro_de_ayuda', 'users.centro_de_ayuda')->name('centro_de_ayuda');
-Route::view('dominios', 'users.dominios')->name('dominios');
+Route::view('allServices', 'users.allServices')->name('allServices');
 Route::view('mas_servicios', 'users.mas_servicios')->name('mas_servicios');
 Route::view('tecnologia', 'users.tecnologia')->name('tecnologia');
 Route::view('resellers', 'users.resellers')->name('resellers');
@@ -41,7 +38,7 @@ Route::resource('sugerencias', sugerenciasController::class)->middleware('auth')
 
 //GET
 Route::get('dashboard', [registrosController::class, 'mostrarRegistros'])->name('dashboard')->middleware('auth');
-Route::get('todo', [noticiasController::class, 'indexGuest']);
+Route::get('template', [noticiasController::class, 'indexGuest']);
 Route::get('usrservicios', [serviciosController::class, 'indexall']);
 Route::get('usrservicios/{id}', [ServiciosController::class, 'findService'])->name('users.servicio');
 Route::get('findRegister', [registrosController::class, 'findregister'])->name('findRegister');
@@ -50,8 +47,10 @@ Route::get('exportsrv/{id}', [serviciosController::class, 'export'])->name('expo
 Route::get('client', [clientesController::class, 'findregister'])->name('client');
 Route::get('findClient', [registrosController::class, 'findClient'])->name('findClient');
 Route::get('todo', [noticiasController::class, 'indexGuest']);
-
-
+Route::get('web_hosting', [serviciosController::class, 'indexHosting'])->name('web_hosting');
+Route::get('dominios', [serviciosController::class, 'indexDomains'])->name('dominios');
+Route::get('servidor_dedicado', [serviciosController::class, 'indexDedicated'])->name('servidor_dedicado');
+Route::get('allServices', [serviciosController::class, 'allServices'])->name('allServices');
 
 //POST
 Route::post('login', [loginController::class, 'login']);

@@ -1,19 +1,57 @@
 @extends('users.template')
 
 @section('contenido')
-    <div style="text-align: center;">
-        <h1 style="text-align: center; margin: 5%; font-size: 300%">Web Hosting</h1>
-        <p style="text-align: center; margin: 5%; font-size: 135% ">
-            El web hosting es un servicio que te permite publicar tu sitio web en Internet. <br><br>
-            Consiste en almacenar los archivos y datos de tu sitio web en servidores especiales
-            para que estén disponibles en línea. <br><br> Para utilizarlo en tu negocio, debes elegir un
-            proveedor de hosting, registrar un nombre de dominio, configurar tu cuenta de hosting,
-            subir los archivos de tu sitio web y realizar un mantenimiento regular. <br><br>
-            El web hosting es fundamental para que tu negocio tenga presencia en línea y pueda ser
-            visitado por tus clientes en Internet.</p>
+    <div class="" style="text-align: center; margin-top: 1rem;">
+        <h4>¡El mejor Hosting lo encuentas aqui!</h4>
+        <h5 style="color: red;">¡Aprovecha nuestras ofertas en hosting!</h5>
+    </div>
+    <style>
+        .card_styles {
+            background: rgb(163, 178, 226);
+            background: linear-gradient(90deg, rgba(163, 178, 226, 1) 0%, rgba(101, 194, 162, 1) 100%, rgba(255, 255, 255, 0.10696778711484589) 100%);
+        }
+    </style>
+    <div class="d-flex flex-wrap justify-content-center">
+        @foreach ($servicios as $servicio)
+            <div class="ctnr">
+                <div class="card mt-4 mr-2 card_styles" style="width: 18rem; height: 27rem; margin: 0.2rem;">
+                    <div class="card-body mr-2 ">
+                        <div class="title"
+                            style="margin-bottom: 4rem; background-color: rgb(0, 255, 64); color: white; text-align: center">
+                            <h5 class="card-title">{{ $servicio->nombre_servicio }}</h5>
+                        </div>
+                        <div class="price" style="text-align: center">
+                            <del>
+                                <strong>
+                                    <h6 class="">${{ $servicio->precio_oferta }}/mes</h6>
+                                </strong>
+                            </del>
+                            <strong>
+                                <h5 class="">${{ $servicio->precio_servicio }}/mes</h5>
+                            </strong>
+                            <p style="font-size: 2.3vh">{{ $servicio->frase_servicio }}</p>
+                        </div>
 
-        <img style="width: 35%;" src="https://i0.wp.com/maxinet.net.mx/wp-content/uploads/2020/01/whost.png?fit=620%2C330&ssl=1"
-            alt="Imagen de hosting">
+                        @php
+                            $beneficios = explode('/', $servicio->beneficios_servicio);
+                        @endphp
+                        <style>
+                            .list:before {
+                                content: '✓';
+                                margin-right: 5px;
+                            }
+                        </style>
+                        @foreach ($beneficios as $beneficio)
+                            <li class="list" style="list-style: none; font-size: 1.8vh">{{ $beneficio }}</li>
+                        @endforeach
+                        <div class="center" style="text-align: center">
+                            <a href="{{ route('users.servicio', ['id' => $servicio->id]) }}"
+                                class="btn btn-light mt-5">Detalles</a>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        @endforeach
     </div>
 @endsection

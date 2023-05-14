@@ -58,6 +58,16 @@
                 @error('beneficios_servicio')
                     <h6 class="alert alert-danger">{{ $message }}</h6>
                 @enderror
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <select name="categoria" class="form-control">
+                        <option value="PAQUETE">PAQUETE</option>
+                        <option value="HOSTING">HOSTING</option>
+                        <option value="DOMINIO">DOMINIO</option>
+                        <option value="DEDICADO">SERVIDOR DEDICADO</option>
+                        <option value="CLOUD">CLOUD HOSTING</option>
+                    </select>
+                </div>
                 <div id="nuevos_campos" class="mb-3">
                     <!-- Aquí se agregarán los nuevos campos -->
                 </div>
@@ -149,6 +159,7 @@
                 <thead>
                     <tr>
                         <th>ID_SERVICIO</th>
+                        <th>CATEGORIA</th>
                         <th>NOMBRE_SERVICIO</th>
                         <th>FRASE_SERVICIO</th>
                         <th>PRECIO_SERVICIO</th>
@@ -162,6 +173,7 @@
                         <tr>
                             <td><a href="{{ route('servicios.show', ['servicio' => $servicio->id]) }}"
                                     class="d-flex align-items-center gap-2">{{ $servicio->id }}</a></td>
+                            <td>{{ $servicio->categoria }}</td>
                             <td>{{ $servicio->nombre_servicio }}</td>
                             <td>{{ $servicio->frase_servicio }}</td>
                             <td>{{ $servicio->precio_servicio }}</td>

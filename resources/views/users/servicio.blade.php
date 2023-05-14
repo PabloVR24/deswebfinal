@@ -1,8 +1,14 @@
-@extends('users.navbar')
-
+@extends('users.template')
 @section('contenido')
-    <h1>{{ $servicio->nombre_servicio }}</h1>
-    <h3>Precio: ${{ $servicio->precio_servicio }}</h3>
+    <div class="mt-5 ml-5 mr-5" style="text-align: center;">
+        <h1 style="font-weight: bold;">{{ $servicio->nombre_servicio }}</h1>
+        <h3>{{ $servicio->frase_servicio }}</h3>
+        <br>
+        <del>
+            <h4>Precio Normal: {{ $servicio->precio_oferta }}</h4>
+        </del>
+        <h3 style="font-weight: bold;">Precio Oferta: ${{ $servicio->precio_servicio }}</h3>
+    </div>
     @php
         $beneficios = explode('/', $servicio->beneficios_servicio);
     @endphp
@@ -12,11 +18,19 @@
             margin-right: 5px;
         }
     </style>
-    @foreach ($beneficios as $beneficio)
-        <li class="list" style="list-style: none; font-size: 2.4vh">{{ $beneficio }}</li>
-    @endforeach
-    <form action="{{ route('exportsrv', ['id' => $servicio->id]) }}">
-        <input type="text"  name="id" hidden value="{{$servicio->id}}">
-        <input type="submit" value="Generar PDF">
-    </form>
+    <div class="m-5"style="text-align: center;">
+        <h3 style="font-weight: bold;">Beneficios:</h3>
+        @foreach ($beneficios as $beneficio)
+            <li class="list" style="list-style: none; font-size: 2.4vh">{{ $beneficio }}</li>
+        @endforeach
+        <br>
+        <h3 style="font-weight: bold;">Categoria:</h3>
+        <h4>{{ $servicio->categoria}}</h4>
+    </div>
+    <div class="m-5"style="text-align: center;">
+        <form action="{{ route('exportsrv', ['id' => $servicio->id]) }}">
+            <input type="text" name="id" hidden value="{{ $servicio->id }}">
+            <input type="submit" class="btn btn-danger" value="Generar PDF" style="width: 13rem; height: 5rem; font-weight: bold; font-size: 1.5rem;">
+        </form>
+    </div>
 @endsection

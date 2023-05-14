@@ -64,9 +64,9 @@
                         Nosotros</a>
                 </li>
                 <li>
-                    <a href="{{ route('centro_de_ayuda') }}"><span class="material-symbols-outlined"> phone_in_talk
+                    <a href="{{ route('allServices') }}"><span class="material-symbols-outlined"> phone_in_talk
                         </span>
-                        Centro de Ayuda</a>
+                        Todos nuestros servicios</a>
                 </li>
                 <li>
                     <a href="{{ route('dominios') }}"><span class="material-symbols-outlined"> http </span> Dominios</a>

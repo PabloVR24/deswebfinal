@@ -20,12 +20,37 @@ class serviciosController extends Controller
         return view('users.servicios', ['servicios' => $servicios]);
     }
 
+    public function allServices()
+    {
+        $servicios = servicios::all();
+        return view('users.allServices', ['servicios' => $servicios]);
+    }
+
+    public function indexHosting()
+    {
+        $serviciosHosting = servicios::where('categoria', 'hosting')->get();
+        return view('users.web_hosting', ['servicios' => $serviciosHosting]);
+    }
+
+    public function indexDomains()
+    {
+        $serviciosHosting = servicios::where('categoria', 'dominio')->get();
+        return view('users.dominios', ['servicios' => $serviciosHosting]);
+    }
+
+    public function indexDedicated()
+    {
+        $serviciosHosting = servicios::where('categoria', 'DEDICADO')->get();
+        return view('users.servidor_dedicado', ['servicios' => $serviciosHosting]);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
             'nombre_servicio' => 'required|string|min:3|max:255',
             'precio_servicio' => 'required|numeric|min:50|max:10000',
             'precio_oferta' => 'required|numeric|min:50|max:10000',
+            'categoria' => 'required',
             'frase_servicio' => 'required|string|min:10|max:255',
             'beneficios_servicio' => 'required|string|min:3|max:2500',
         ]);
@@ -34,6 +59,7 @@ class serviciosController extends Controller
         $servicios->nombre_servicio = $request->nombre_servicio;
         $servicios->precio_servicio = $request->precio_servicio;
         $servicios->precio_oferta = $request->precio_oferta;
+        $servicios->categoria = $request->categoria;
         $servicios->frase_servicio = $request->frase_servicio;
         $servicios->beneficios_servicio = $request->beneficios_servicio;
         $servicios->save();
@@ -58,6 +84,7 @@ class serviciosController extends Controller
         $servicio->nombre_servicio = $request->nombre_servicio;
         $servicio->precio_servicio = $request->precio_servicio;
         $servicio->beneficios_servicio = $request->beneficios_servicio;
+        $servicio->categoria = $request->categoria;
         $servicio->frase_servicio = $request->frase_servicio;
         $servicio->precio_oferta = $request->precio_oferta;
         $servicio->save();
@@ -79,8 +106,7 @@ class serviciosController extends Controller
         $servicio = servicios::find($id);
         $data = [
             'servicio' => $servicio
-        ];
-        ;
+        ];;
         $pdf = Pdf::loadView('users.exportservice', $data);
         $pdf->set_base_path(asset('css/export.css'));
         return $pdf->stream('SRV' . $id . '.pdf');
