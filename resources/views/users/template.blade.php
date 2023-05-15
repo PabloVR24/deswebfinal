@@ -123,6 +123,7 @@
                 <img class="sr2" src="{{ URL::asset('images/señor2.png') }}" alt="Señor 2" />
             </div>
             <div class="fila2">
+                @yield('noticias')
                 <p class="derechaTXT">
                     La máxima calidad en hosting al mejor precio. Los planes incluyen
                     todo lo que necesitas: Mayor rendimiento y máxima seguridad para tu

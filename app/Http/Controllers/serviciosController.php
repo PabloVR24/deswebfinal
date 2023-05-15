@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\noticias;
 use App\Models\servicios;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -17,7 +18,8 @@ class serviciosController extends Controller
     public function indexall()
     {
         $servicios = servicios::all();
-        return view('users.servicios', ['servicios' => $servicios]);
+        $noticias = noticias::all();
+        return view('users.servicios', ['servicios' => $servicios], ['noticias' => $noticias]);
     }
 
     public function allServices()

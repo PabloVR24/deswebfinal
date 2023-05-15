@@ -18,17 +18,24 @@
     </style>
 
     <h3>Slider</h3>
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleControls" class="carousel slide d-flex justify-content-between" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="{{ URL::asset('images/taini.png') }}" class="d-block w-100" alt="...">
             </div>
-            <div class="carousel-item">
-                <img src="{{ URL::asset('images/badbo.png') }}" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ URL::asset('images/taini2.png') }}" class="d-block w-100" alt="...">
-            </div>
+            @foreach ($noticias as $noticia)
+                <div class="carousel-item">
+                    <div class="card" style="width: 18rem;">
+                        <h6><strong>{{ $noticia->publishedAt }}</strong></h6>
+                        <img class="card-img-top" src="{{ $noticia->urlToImage }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $noticia->author }}</h5>
+                            <p class="card-text" style="font-size: 2.5vh">{{ $noticia->title }}</p>
+                            <a href="{{ $noticia->url }}" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -102,7 +109,8 @@
                 </h2>
                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the
                         <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting
                         happening here in terms of content, but just filling up the space to make it look, at least at first
                         glance, a bit more representative of how this would look in a real-world application.

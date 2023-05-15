@@ -38,7 +38,7 @@ Route::resource('sugerencias', sugerenciasController::class)->middleware('auth')
 
 //GET
 Route::get('dashboard', [registrosController::class, 'mostrarRegistros'])->name('dashboard')->middleware('auth');
-Route::get('template', [noticiasController::class, 'indexGuest']);
+Route::get('todo', [noticiasController::class, 'indexGuest']);
 Route::get('usrservicios', [serviciosController::class, 'indexall']);
 Route::get('usrservicios/{id}', [ServiciosController::class, 'findService'])->name('users.servicio');
 Route::get('findRegister', [registrosController::class, 'findregister'])->name('findRegister');
@@ -46,7 +46,6 @@ Route::get('export/{id}', [registrosController::class, 'export'])->name('export'
 Route::get('exportsrv/{id}', [serviciosController::class, 'export'])->name('exportsrv');
 Route::get('client', [clientesController::class, 'findregister'])->name('client');
 Route::get('findClient', [registrosController::class, 'findClient'])->name('findClient');
-Route::get('todo', [noticiasController::class, 'indexGuest']);
 Route::get('web_hosting', [serviciosController::class, 'indexHosting'])->name('web_hosting');
 Route::get('dominios', [serviciosController::class, 'indexDomains'])->name('dominios');
 Route::get('servidor_dedicado', [serviciosController::class, 'indexDedicated'])->name('servidor_dedicado');

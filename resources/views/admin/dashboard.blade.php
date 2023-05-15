@@ -23,7 +23,6 @@
 
     <div class="" id="ten_days" style="margin: 1rem; padding-left: 4rem; padding-right: 4rem">
         <h3 style="margin-bottom: 2rem;">Registros a vencer dentro de 10 dias</h3>
-
         <table id="dataTable" style="padding: 0%">
             <thead>
                 <tr>
@@ -48,15 +47,13 @@
             </tbody>
         </table>
 
-        <div class="row d-flex">
+        <div class="row justify-content-center align-items-center g-2;" style="text-align: center;">
             <div class="col">
-                <div class="chart" style="width: 20rem; height: 30rem;">
-                    <canvas id="myChart"></canvas>
+                <div class="chart">
+                    <canvas id="myChart" style="width: 20rem; height: 30rem;"></canvas>
                 </div>
             </div>
-            <style>
-            </style>
-            <div class="col table-container">
+            <div class="col">
                 <table id="clientTable">
                     <thead>
                         <th>Nombre del Cliente</th>
@@ -66,6 +63,7 @@
                         @foreach ($conteo as $cteo)
                             <tr>
                                 <td> {{ $cteo->cliente->nombre_cliente . ' ' . $cteo->cliente->apellido_pat . ' ' . $cteo->cliente->apellido_mat }}
+                                    ({{ $cteo->id_cliente }})
                                 </td>
                                 <td> {{ $cteo->total_registros }}</td>
                             </tr>
@@ -75,16 +73,6 @@
                 </table>
             </div>
         </div>
-        <script>
-            $(document).ready(function() {
-                $('#dataTable').DataTable({
-                    responsive: true
-                });
-                $('#clientTable').DataTable({
-                    responsive: true
-                });
-            });
-        </script>
 
         <script>
             var conteo = {!! json_encode($conteo) !!};
@@ -126,18 +114,16 @@
         </script>
     </div>
 
-    <div id="registros_clientes" style="margin: 1rem; padding-left: 4rem; padding-right: 4rem; height: 40rem;">
+    <div class="" id="registros_clientes" style="margin: 1rem; padding-left: 4rem; padding-right: 4rem">
         <h3 style="margin-bottom: 2rem;">Conteo de Registros por Cliente</h3>
-        <div class="row d-flex">
+        <div class="row justify-content-center align-items-center g-2;" style="text-align: center;">
             <div class="col">
-                <div class="chart" style="width: 20rem; height: 30rem;">
+                <div class="chart" style="width: 20rem; height: 30rem;"">
                     <canvas id="chart_clients"></canvas>
                 </div>
             </div>
-            <style>
-            </style>
-            <div class="col table-container">
-                <table id="clientTable">
+            <div class="col">
+                <table id="clientTableReg">
                     <thead>
                         <th>Nombre del Cliente</th>
                         <th>Conteo de Registros</th>
@@ -152,56 +138,52 @@
                         @endforeach
                     </tbody>
                 </table>
-
             </div>
         </div>
-        <script>
-            var conteo = {!! json_encode($conteouno) !!};
-            var labels = conteo.map(function(item) {
-                return item.id_cliente;
-            });
-            var data = conteo.map(function(item) {
-                return item.total_registros_usuario;
-            });
+    </div>
+    <script>
+        var conteo = {!! json_encode($conteouno) !!};
+        var labels = conteo.map(function(item) {
+            return item.id_cliente;
+        });
+        var data = conteo.map(function(item) {
+            return item.total_registros_usuario;
+        });
 
-            var ctx = document.getElementById('chart_clients').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Total de registros por cliente',
-                        data: data,
-                        backgroundColor: 'rgba(75, 196, 180, 1)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            stepSize: 1
-                        }
+        var ctx = document.getElementById('chart_clients').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Total de registros por cliente',
+                    data: data,
+                    backgroundColor: 'rgba(75, 196, 180, 1)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stepSize: 1
                     }
                 }
-            });
-        </script>
-    </div>
+            }
+        });
+    </script>
 
-
-    <div id="registros_servicios" style="margin: 1rem; padding-left: 4rem; padding-right: 4rem"">
+    <div id="registros_servicios" style="margin: 1rem; padding-left: 4rem; padding-right: 4rem">
         <h3 style="margin-bottom: 2rem;">Conteo de Registros por Servicio</h3>
-        <div class="row d-flex">
+        <div class="row justify-content-center align-items-center g-2;" style="text-align: center;">
             <div class="col">
                 <div class="chart" style="width: 20rem; height: 30rem;">
                     <canvas id="chart_services"></canvas>
                 </div>
             </div>
-            <style>
-            </style>
-            <div class="col table-container">
+            <div class="col">
                 <table id="servicesTable">
                     <thead>
                         <th>Nombre del Servicio</th>
@@ -216,7 +198,6 @@
                         @endforeach
                     </tbody>
                 </table>
-
             </div>
         </div>
     </div>
@@ -232,7 +213,7 @@
 
         var ctx = document.getElementById('chart_services').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'line',
+            type: 'pie',
             data: {
                 labels: labels,
                 datasets: [{
@@ -282,6 +263,23 @@
                 tenDaysDiv.style.display = "block";
                 registros_clientes.style.display = "block";
             }
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('#dataTable').DataTable({
+                responsive: true
+            });
+            $('#clientTable').DataTable({
+                responsive: true
+            });
+            $('#servicesTable').DataTable({
+                responsive: true
+            });
+            $('#clientTableReg').DataTable({
+                responsive: true
+            });
         });
     </script>
 @endsection

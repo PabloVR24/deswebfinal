@@ -25,12 +25,18 @@
         @endforeach
         <br>
         <h3 style="font-weight: bold;">Categoria:</h3>
-        <h4>{{ $servicio->categoria}}</h4>
+        <h4>{{ $servicio->categoria }}</h4>
     </div>
     <div class="m-5"style="text-align: center;">
         <form action="{{ route('exportsrv', ['id' => $servicio->id]) }}">
             <input type="text" name="id" hidden value="{{ $servicio->id }}">
-            <input type="submit" class="btn btn-danger" value="Generar PDF" style="width: 13rem; height: 5rem; font-weight: bold; font-size: 1.5rem;">
+            <input type="submit" class="btn btn-danger" value="Generar PDF"
+                style="width: 13rem; height: 5rem; font-weight: bold; font-size: 1.5rem;">
+            <div class="btn btn-success d-flex justify-content-center align-items-center"
+                style="width: 13rem; height: 5rem;">
+                <a href="{{ route('client') }}"
+                    style="color: white; text-decoration: none; font-weight: bold; font-size: 1.5rem;">Contratar</a>
+            </div>
         </form>
     </div>
 @endsection
