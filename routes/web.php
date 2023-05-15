@@ -26,6 +26,11 @@ Route::view('hire', 'users.hire')->name('hire');
 Route::view('success', 'users.success')->name('success');
 Route::view('export', 'users.export')->name('export');
 Route::view('sugerencias', 'admin.sugerencias')->name('sugerencias');
+Route::view('compañia', 'users.compañia')->name('compañia');
+Route::view('FAQ', 'users.FAQ')->name('FAQ');
+Route::view('clientesSH', 'users.clientesSH')->name('clientesSH');
+Route::view('soluciones', 'users.soluciones')->name('soluciones');
+Route::view('contacto', 'users.contacto')->name('contacto');
 
 
 //RESOURCES

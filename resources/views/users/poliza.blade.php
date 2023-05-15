@@ -14,9 +14,5 @@
             En resumen, estamos aquí para proporcionarte un servicio
             confiable y satisfactorio, brindándote la tranquilidad y
             el respaldo que necesitas para tener éxito en línea.</p>
-
-        <img style="width: 35%; margin-left:5%" src="https://cdn.shopify.com/s/files/1/0047/9621/9495/products/logo_poliza_servicios-01_grande.png?v=1632961770"
-            alt="Imagen de hosting">
-
     </div>
 @endsection
