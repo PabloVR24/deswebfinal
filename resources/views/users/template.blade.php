@@ -13,7 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer>
+    </script>
 </head>
 
 <body>
@@ -28,11 +29,11 @@
 
     <nav class="navH">
         <ul>
-            <li><a href="#">Compañía</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Soluciones</a></li>
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="{{ route('compañia') }}">Compañía</a></li>
+            <li><a href="{{ route('allServices') }}">Servicios</a></li>
+            <li><a href="{{ route('soluciones') }}">Soluciones</a></li>
+            <li><a href="{{ route('clientesSH') }}">Clientes</a></li>
+            <li><a href="{{ route('contacto') }}">Contacto</a></li>
         </ul>
     </nav>
 
@@ -95,13 +96,13 @@
             @php
                 $archivo = public_path('archivo.txt');
                 $contador = intval(file_get_contents($archivo));
-                
+
                 $file = fopen($archivo, 'w');
                 fwrite($file, $contador + 1 . PHP_EOL);
                 fclose($file);
-                
+
                 $file = fopen($archivo, 'r');
-                
+
             @endphp
             <div class="Contadores">
                 <p class="CVisitas">
@@ -181,10 +182,8 @@
                     </div>
                     <div class="C2">
                         <h3 class="FooterH3">
-                            <a href="https://www.google.com"><span class="material-symbols-outlined"> location_on
-                                </span>
-                                <br />
-                                Ver Mapa</a>
+                            <a href="https://goo.gl/maps/jv4SqxaSzWeQt7aLA" target="_blank"><span
+                                    class="material-symbols-outlined"> location_on</span><br />Ver Mapa</a>
                         </h3>
                     </div>
                 </div>
@@ -226,6 +225,9 @@
                         <div class="FORM2">
                             <label for="contenido">Sugerencia o mensaje:</label>
                             <textarea value="{{ old('contenido') }}" class="form-control" name="contenido"></textarea>
+
+                            <div class="g-recaptcha" data-sitekey="6LdD0gwmAAAAAHkPUGE3cMd0N4Bpd70VFZbvkCug"></div>
+
                             @error('contenido')
                                 <h6 style="color: red;">{{ $message }}</h6>
                             @enderror
@@ -236,7 +238,6 @@
                             @error('autor')
                                 <h6 style="color: red;">{{ $message }}</h6>
                             @enderror
-                            {{-- <div class="g-recaptcha" data-sitekey="6LewTAImAAAAAPpjdzHBUpYbbLfjjTJYTjQGL85K"></div> --}}
                         </div>
                     </form>
                 </div>
