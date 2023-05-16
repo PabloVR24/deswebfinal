@@ -66,7 +66,7 @@
             </div>
             @foreach ($noticias as $noticia)
                 <div class="carousel-item">
-                    <div class="card" style="width: 18rem; height: 30rem; margin: auto;">
+                    <div class="card" style="width: 95%; height: 30rem; margin: auto;">
                         <h6><strong>{{ $noticia->publishedAt }}</strong></h6>
                         <img class="card-img-top" src="{{ $noticia->urlToImage }}" alt="Card image cap">
                         <div class="card-body d-flex flex-column justify-content-between">

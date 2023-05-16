@@ -1,8 +1,6 @@
 @extends('users.template')
-
 @section('contenido')
     <div style="text-align: center;">
-        <h1 style="text-align: center; margin: 5%; font-size: 300%">Preguntas Frecuentes</h1>
 
         <head>
             <style>
@@ -50,46 +48,49 @@
         </head>
 
         <body>
-            <button class="accordion">¿Cuáles son los planes de hosting que ofrecen?</button>
+            <h1 style="text-align: center; margin: 3%; font-size: 300%">Resellers</h1>
+            <p style="text-align: center; margin: 3%; font-size: 135% ">
+                Nuestro programa de revendedores está diseñado para aquellos que
+                desean ofrecer servicios de hosting a sus propios clientes.
+                Te brindamos la oportunidad de comenzar tu propio negocio de
+                hosting sin la necesidad de preocuparte por la infraestructura técnica.
+                Al unirte a nuestro programa, disfrutarás de los siguientes beneficios:</p>
+
+            <button class="accordion">Marca Blanca</button>
             <div class="panel">
-                <p>Ofrecemos una variedad de planes de hosting, desde hosting compartido hasta servidores dedicados. Puedes
-                    encontrar más información detallada sobre nuestros planes en nuestra página de precios.</p>
+                <p>Personaliza y promociona los servicios de hosting bajo tu propia marca.
+                    Esto te permite construir tu propia identidad empresarial y
+                    fortalecer la lealtad de tus clientes.</p>
             </div>
 
-            <button class="accordion">¿Cómo puedo transferir mi sitio web a StellarHost?</button>
+            <button class="accordion">Paquetes Flexibles</button>
             <div class="panel">
-                <p>Transferir tu sitio web a StellarHost es fácil. Nuestro equipo de soporte técnico te guiará a través del
-                    proceso de migración y te ayudará a transferir tus archivos y bases de datos sin problemas.</p>
+                <p>Elige entre una variedad de paquetes de hosting para satisfacer
+                    las necesidades de tus clientes. Ofrecemos opciones de hosting
+                    compartido, VPS y dedicado, así como servicios de registro de dominio.</p>
             </div>
 
-            <button class="accordion">¿Qué opciones de seguridad ofrecen para proteger mi sitio web?</button>
+            <button class="accordion">Infraestructura Confiable</button>
             <div class="panel">
-                <p>En StellarHost, nos tomamos la seguridad en serio. Ofrecemos diversas opciones de seguridad, como
-                    certificados SSL, firewall de aplicaciones web (WAF) y copias de seguridad automáticas, para proteger tu
-                    sitio web contra amenazas en línea.</p>
-            </div>
-            <button class="accordion">¿Cuál es el tiempo de actividad garantizado?</button>
-            <div class="panel">
-                <p>En StellarHost, garantizamos un tiempo de actividad del 99.9%. Nuestra infraestructura robusta y nuestros
-                    servidores de alta calidad nos permiten ofrecer un servicio confiable y mantener tu sitio web en línea
-                    en todo momento.</p>
+                <p>No te preocupes por la gestión de servidores y la infraestructura técnica.
+                    Nuestro equipo se encarga de mantener la infraestructura y garantizar
+                    la seguridad y el rendimiento de los servicios de hosting.</p>
             </div>
 
-            <button class="accordion">¿Puedo instalar aplicaciones populares como WordPress?</button>
+            <button class="accordion">Soporte Técnico Especializado</button>
             <div class="panel">
-                <p>Sí, en StellarHost ofrecemos instaladores automáticos y compatibilidad con una amplia gama de
-                    aplicaciones populares, incluyendo WordPress, Joomla, Drupal y muchas otras. Puedes instalar estas
-                    aplicaciones con solo unos pocos clics desde tu panel de control.</p>
+                <p>Obtén acceso a nuestro equipo de soporte técnico experto,
+                    disponible las 24 horas del día, los 7 días de la semana.
+                    Estaremos aquí para ayudarte con cualquier consulta técnica
+                    o problema que puedas encontrar.</p>
             </div>
 
-            <button class="accordion">¿Cuál es su política de respaldo de datos?</button>
+            <button class="accordion">Herramientas de Gestión</button>
             <div class="panel">
-                <p>En StellarHost, realizamos copias de seguridad automáticas de tus datos de forma regular. Esto garantiza
-                    que en caso de cualquier problema o pérdida de datos, podamos restaurar tu sitio web a un estado
-                    anterior. Además, te recomendamos realizar copias de seguridad adicionales por tu cuenta para mayor
-                    seguridad.</p>
+                <p>Te proporcionamos herramientas intuitivas de gestión de clientes
+                    y facturación, lo que facilita la administración de tus clientes
+                    y el seguimiento de tus ganancias.</p>
             </div>
-
 
             <script>
                 var acc = document.getElementsByClassName("accordion");

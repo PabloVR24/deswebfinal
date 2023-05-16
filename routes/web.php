@@ -31,6 +31,7 @@ Route::view('FAQ', 'users.FAQ')->name('FAQ');
 Route::view('clientesSH', 'users.clientesSH')->name('clientesSH');
 Route::view('soluciones', 'users.soluciones')->name('soluciones');
 Route::view('contacto', 'users.contacto')->name('contacto');
+Route::view('centro_de_ayuda', 'users.centro_de_ayuda')->name('centro_de_ayuda');
 
 
 //RESOURCES

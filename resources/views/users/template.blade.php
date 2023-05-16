@@ -25,20 +25,40 @@
         <p id="ConVent">
             <b>Contacto de Ventas:</b><br /><b>📞 (844) 107 1532</b>
         </p>
+
+        <nav class="navH">
+            <ul>
+                <li><a href="{{ route('compañia') }}">Compañía</a></li>
+                <li><a href="{{ route('allServices') }}">Servicios</a></li>
+                <li><a href="{{ route('soluciones') }}">Soluciones</a></li>
+                <li><a href="{{ route('clientesSH') }}">Clientes</a></li>
+                <li><a href="{{ route('contacto') }}">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav class="navH">
-        <ul>
-            <li><a href="{{ route('compañia') }}">Compañía</a></li>
-            <li><a href="{{ route('allServices') }}">Servicios</a></li>
-            <li><a href="{{ route('soluciones') }}">Soluciones</a></li>
-            <li><a href="{{ route('clientesSH') }}">Clientes</a></li>
-            <li><a href="{{ route('contacto') }}">Contacto</a></li>
-        </ul>
-    </nav>
 
-    <div class="slider">
-        @yield('slider')
+
+    <div id="carouselExampleControls" class="carousel slide d-flex justify-content-between" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ URL::asset('images/SLIDER/slider1.png') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ URL::asset('images/SLIDER/slider2.png') }}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ URL::asset('images/SLIDER/slider3.png') }}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
     <!-- Navbar vertical -->
@@ -65,17 +85,16 @@
                         Nosotros</a>
                 </li>
                 <li>
-                    <a href="{{ route('allServices') }}"><span class="material-symbols-outlined"> phone_in_talk
+                    <a href="{{ route('centro_de_ayuda') }}"><span class="material-symbols-outlined"> phone_in_talk
                         </span>
-                        Todos nuestros servicios</a>
+                        Centro de ayuda</a>
                 </li>
                 <li>
                     <a href="{{ route('dominios') }}"><span class="material-symbols-outlined"> http </span> Dominios</a>
                 </li>
                 <li>
                     <a href="{{ route('mas_servicios') }}"><span class="material-symbols-outlined"> library_add </span>
-                        Más
-                        Servicios</a>
+                        Más Servicios</a>
                 </li>
                 <li>
                     <a href="{{ route('tecnologia') }}"><span class="material-symbols-outlined"> settings_suggest
@@ -220,10 +239,10 @@
 
                             </div>
 
-                            <button class="SEND btn btn-light" type="submit">Enviar Sugerencia</button>
+                            <button class="SENDFORM" type="submit">Enviar Sugerencia</button>
                         </div>
                         <div class="FORM2">
-                            <label for="contenido">Sugerencia o mensaje:</label>
+                            <label for="contenido">Sugerencia:</label>
                             <textarea value="{{ old('contenido') }}" class="form-control" name="contenido"></textarea>
 
                             <div class="g-recaptcha" data-sitekey="6LdD0gwmAAAAAHkPUGE3cMd0N4Bpd70VFZbvkCug"></div>

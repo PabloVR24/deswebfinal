@@ -21,7 +21,7 @@
                     src="https://www.tacoscheco.com/wp-content/uploads/2017/05/logo-redondo-fondo-blanco-tacos-checo-01.png"
                     alt="Cliente 4">
             </a>
-            <a style="color: white" href="www.steren.com.mx" target="_blank">
+            <a style="color: white" href="https://www.steren.com.mx" target="_blank">
                 <img width="100px" src="https://pbs.twimg.com/profile_images/1208026435052589056/8D_5xACg_400x400.jpg"
                     style="border-radius: 10px;margin: 5%" alt="Cliente 5">
             </a>
