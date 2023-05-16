@@ -46,7 +46,7 @@
                             @endforeach
                             <div class="center" style="text-align: center">
                                 <a href="{{ route('users.servicio', ['id' => $servicio->id]) }}" class="btn btn-light mt-5"
-                                    style="width: 100%;">Detalles</a>
+                                    style="width: 100%;"><i class="fa-solid fa-circle-info" style="color: #000000;"></i> Detalles</a>
                             </div>
 
                         </div>
@@ -74,7 +74,7 @@
                                 <h5 class="card-title">{{ $noticia->author }}</h5>
                                 <p class="card-text" style="font-size: 2.5vh;">{{ $noticia->title }}</p>
                             </div>
-                            <a href="{{ $noticia->url }}" class="btn btn-warning">Ver Noticia</a>
+                            <a href="{{ $noticia->url }}" class="btn btn-warning"><i class="fa-solid fa-newspaper" style="color: #000000;"></i> Ver Noticia</a>
                         </div>
                     </div>
                 </div>

@@ -201,6 +201,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="sugerencias">Sugerencias</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">User</a>
+                        </li>
                         <form action="/logout" method="POST">
                             @csrf
                             <li class="nav-item">

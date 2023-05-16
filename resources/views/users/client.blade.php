@@ -18,18 +18,21 @@
         <h2>Busqueda de Clientes</h2>
         <form action="">
             <label for="texto" class="form-label">Telefono Celular: </label>
-            <input name="texto" id="Celular" class="form-control"type="text"
-                placeholder="Ingresa tu numero de Celular">
+            <input name="texto" id="Celular" class="form-control"type="text" placeholder="Ingresa tu numero de Celular">
             <br>
             <div style="text-align: center;">
-                <input type="submit" class="btn btn-success" style="width: 50%; font-size: 1.3rem;"value="Buscar">
+                <button type="submit" class="btn btn-success" style="width: 50%; font-size: 1.3rem;">
+                    <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                    Buscar
+                </button>
+
             </div>
         </form>
     </div>
 
     @if ($clientes->isEmpty())
         <style>
-            .cont-form { 
+            .cont-form {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -72,8 +75,11 @@
                     <h6 class="alert alert-danger">{{ $message }}</h6>
                 @enderror
                 <br>
-                <div style="text-align: center;"><input type="submit" value="Registrarse"
-                        style="width: 15rem;"class="btn btn-warning">
+                <div style="text-align: center;">
+                    <button type="submit" style="width: 15rem;" class="btn btn-warning">
+                        <i class="fa-solid fa-id-card" style="color: #000000;"></i>
+                        Registrarse
+                    </button>
                 </div>
 
 
@@ -103,7 +109,11 @@
                             <td>
                                 <form action="{{ route('findClient') }}">
                                     <input type="text" hidden name="id" value="{{ $cliente->id }}">
-                                    <input type="submit" value="Seleccionar" class="btn btn-warning">
+                                    <button type="submit" class="btn btn-warning">
+                                        Seleccionar
+                                        <i class="fa-solid fa-right" style="color: #000000;"></i>
+                                    </button>
+
                                 </form>
                             </td>
                         </tr>

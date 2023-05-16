@@ -38,7 +38,7 @@
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_captcha" value="false">
 
-            <button type="submit" class="btn btn-primary">Enviar Correo</button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i> Enviar Correo</button>
         </form>
     </div>
 @endsection
