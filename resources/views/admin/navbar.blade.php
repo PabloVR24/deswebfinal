@@ -140,6 +140,7 @@
 
     .nav-link {
         color: #762424;
+        margin-top: 1%;
     }
 
     .nav-link:hover {
