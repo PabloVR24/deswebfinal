@@ -2,7 +2,7 @@
 @extends('extends.datatables')
 @section('contenido')
     <div class="m-4 p-3">
-        <h1>Busqueda de ticket</h1>
+        <h1>Busqueda de Ticket</h1>
         <form id="searchForm" action="{{ route('findRegister') }}" method="GET" class="mb-5" style="text-align: right;">
             <input type="text" name="texto" id="texto" class="form-control" value="{{ $texto }}"
                 placeholder="Ingresa tu numero de Ticket">

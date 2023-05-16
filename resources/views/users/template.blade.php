@@ -116,10 +116,6 @@
                     <a href="{{ route('FAQ') }}"><span class="material-symbols-outlined"> psychology_alt </span>
                         FAQ</a>
                 </li>
-                <li>
-                    <a href="{{ route('login') }}"><span class="material-symbols-outlined"> key </span>
-                        Admin</a>
-                </li>
             </ul>
             @php
                 $archivo = public_path('archivo.txt');
