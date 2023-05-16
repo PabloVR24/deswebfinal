@@ -2,23 +2,16 @@
 
 @section('contenido')
     <?php
-    $url = 'https://newsapi.org/v2/everything?q=tech&from=2023-04-20&to=2023-04-20&sortBy=popularity&apiKey=15981b3988bc425693188994981f8b2f';
-    $response = file_get_contents($url);
-    $datos = json_decode($response, true);
+    use GuzzleHttp\Client;
+    use Carbon\Carbon;
+    $fecha = Carbon::now();
     
+    $url = 'https://newsapi.org/v2/everything?q=tech&from=2023-05-13&to=2023-05-13&sortBy=popularity&apiKey=15981b3988bc425693188994981f8b2f';
+    $client = new Client();
+    $response = $client->get($url);
+    $datos = json_decode($response->getBody());
     ?>
-    <link href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/r-2.4.1/datatables.min.css" rel="stylesheet" />
-    <script src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.13.4/r-2.4.1/datatables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#noticiasTable').DataTable({
-                responsive: true
-            });
-            $('#alumnosTable').DataTable({
-                responsive: true
-            });
-        });
-    </script>
+    @extends('extends.datatables')
 
     <div class="container w-25 border p-4 my-4">
         <div class="row mx-auto">
@@ -108,16 +101,16 @@
 
     <div class="container">
         <h3><strong>Noticias en BD</strong></h3>
-        <table id="noticiasTable" class="display">
+        <table id="newsTable" class="display">
             <thead>
                 <tr>
-                    <th>id</th>
-                    <th>Titulo</th>
-                    <th>Author</th>
-                    <th>URL</th>
-                    <th>IMAGEN:URL</th>
-                    <th>Publicado</th>
-                    <th>Eliminar</th>
+                    <th style="width: 5%;">id</th>
+                    <th style="width: 15%;">Titulo</th>
+                    <th style="width: 10%;">Author</th>
+                    <th style="width: 20%;">URL</th>
+                    <th style="width: 20%;">IMAGEN:URL</th>
+                    <th style="width: 15%;">Publicado</th>
+                    <th style="width: 15%;">Eliminar</th>
                 </tr>
             </thead>
             <tbody id="tablaRegistros">
@@ -149,20 +142,20 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($datos['articles'] as $noticia)
+                @foreach ($datos->articles as $noticia)
                     <tr>
                         <td>
                             <ul style="list-style: none; text-align: left">
-                                <li> <strong>{{ $noticia['author'] }}</strong></li>
+                                <li> <strong>{{ $noticia->author }}</strong></li>
                                 <li>
-                                    <h4>{{ $noticia['title'] }}</h4>
+                                    <h4>{{ $noticia->title }}</h4>
                                 </li>
-                                <li> {{ $noticia['url'] }}</li>
-                                <li> {{ $noticia['publishedAt'] }}</li>
+                                <li> {{ $noticia->url }}</li>
+                                <li> {{ $noticia->publishedAt }}</li>
                             </ul>
                         </td>
                         <td>
-                            <img src="{{ $noticia['urlToImage'] }}" alt="" width="100vh" height="70vh">
+                            <img src="{{ $noticia->urlToImage }}" alt="" width="100vh" height="70vh">
                         </td>
                         <td>
                             <form action="{{ route('noticias.store') }}" method="POST">
@@ -170,31 +163,31 @@
 
                                 <div class="mb-3">
                                     <label hidden for="author" class="form-label">Autor</label>
-                                    <input hidden type="text" value="{{ $noticia['author'] }}" class="form-control"
+                                    <input hidden type="text" value="{{ $noticia->author }}" class="form-control"
                                         name="author">
                                 </div>
 
                                 <div class="mb-3">
                                     <label hidden for="title" class="form-label">Titulo</label>
-                                    <input hidden type="text" value="{{ $noticia['title'] }}" class="form-control"
+                                    <input hidden type="text" value="{{ $noticia->title }}" class="form-control"
                                         name="title">
                                 </div>
 
                                 <div class="mb-3">
                                     <label hidden for="url" class="form-label">URL</label>
-                                    <input hidden type="text" value="{{ $noticia['url'] }}" class="form-control"
+                                    <input hidden type="text" value="{{ $noticia->url }}" class="form-control"
                                         name="url">
                                 </div>
 
                                 <div class="mb-3">
                                     <label hidden for="urlToImage" class="form-label">URL: Imagen</label>
-                                    <input hidden type="text" value="{{ $noticia['urlToImage'] }}"
-                                        class="form-control" name="urlToImage">
+                                    <input hidden type="text" value="{{ $noticia->urlToImage }}" class="form-control"
+                                        name="urlToImage">
                                 </div>
 
                                 <div class="mb-3">
                                     <label hidden for="publishedAt" class="form-label">Publicado El:</label>
-                                    <input hidden type="text" value="{{ $noticia['publishedAt'] }}"
+                                    <input hidden type="text" value="{{ $noticia->publishedAt }}"
                                         class="form-control" name="publishedAt">
                                 </div>
 

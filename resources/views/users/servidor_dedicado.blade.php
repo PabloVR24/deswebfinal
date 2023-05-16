@@ -2,7 +2,7 @@
 
 @section('contenido')
     <div class="" style="text-align: center; margin-top: 1rem;">
-        <h4>¿Dominios? ¡lo encuentas aqui!</h4>
+        <h4>Servidores Dedicados? ¡lo encuentas aqui!</h4>
         <h5 style="color: red;">¡Aprovecha nuestras ofertas en servidores dedicados!</h5>
     </div>
     <style>

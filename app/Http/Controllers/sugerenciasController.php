@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\sugerencias;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
 
 class sugerenciasController extends Controller
 {
@@ -23,6 +25,22 @@ class sugerenciasController extends Controller
             'autor' => 'required|string|min:3|max:255',
             'contenido' => 'required|string|min:3|max:500',
             'email' => 'required|email',
+            'g-recaptcha-response' => function ($attribute, $value, $fail) {
+                $secretKey = "6LdD0gwmAAAAAOHfhH9VmCkWOsMGn601VBdE7kuh";
+                $response = $value;
+                $userIP = $_SERVER['REMOTE_ADDR'];
+                $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$response&remoteip=$userIP";
+    
+                $client = new Client();
+                $response = $client->get($url);
+                $responseData = json_decode($response->getBody());
+    
+                if (!$responseData->success) {
+                    Session::flash('g-recaptcha-response', 'Favor de Marcar el Captcha');
+                    Session::flash('alert-class', 'alert-danger');
+                    $fail($attribute . 'google reCaptcha failed');
+                }
+            }
         ]);
 
         $sugerencia = new sugerencias;

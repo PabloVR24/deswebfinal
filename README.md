@@ -1,5 +1,8 @@
 # Proyecto Final: Desarrollo Web
 
+![Modelo SQL](/public/images/MODELO%20SQL.png)
+
+
 ## Faltantes: Cacho:
 - Sitio web acorde al diseño (se anexa diseño en photoshop)
 Posibilidad de cambio?

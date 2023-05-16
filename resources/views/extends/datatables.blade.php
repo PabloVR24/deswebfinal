@@ -22,6 +22,14 @@
             "lengthChange": false
         });
 
+        $('#newsTable').DataTable({
+            responsive: true,
+            searching: false,
+            language: {
+                search: "Buscar:",
+            }
+        });
+
         $('#alumnosTable').DataTable({
             responsive: true,
             searching: false,
