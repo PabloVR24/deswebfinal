@@ -16,7 +16,7 @@ class noticiasController extends Controller
 
     public function indexGuest()
     {
-        $noticias = noticias::orderBy('created_at', 'desc')->get();
+        $noticias = noticias::orderBy('created_at', 'asc')->get();
         return view('todo', ['noticias' => $noticias]);
     }
 

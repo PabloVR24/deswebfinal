@@ -45,8 +45,8 @@
                                 <li class="list" style="list-style: none; font-size: 1.8vh">{{ $beneficio }}</li>
                             @endforeach
                             <div class="center" style="text-align: center">
-                                <a href="{{ route('users.servicio', ['id' => $servicio->id]) }}"
-                                    class="btn btn-light mt-5" style="width: 100%;">Detalles</a>
+                                <a href="{{ route('users.servicio', ['id' => $servicio->id]) }}" class="btn btn-light mt-5"
+                                    style="width: 100%;">Detalles</a>
                             </div>
 
                         </div>
@@ -58,7 +58,7 @@
 @endsection
 
 @section('noticias')
-    <div id="carouselExampleControls" class="carousel slide m-1 d-flex justify-content-between" data-bs-ride="carousel"
+    <div id="carouselNoticias" class="carousel slide m-1 d-flex justify-content-between" data-bs-ride="carousel"
         style="text-align: center;">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -80,11 +80,11 @@
                 </div>
             @endforeach
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselNoticias" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselNoticias" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
