@@ -13,8 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer>
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -90,7 +89,8 @@
                         Centro de ayuda</a>
                 </li>
                 <li>
-                    <a href="{{ route('dominios') }}"><span class="material-symbols-outlined"> http </span> Dominios</a>
+                    <a href="{{ route('dominios') }}"><span class="material-symbols-outlined"> http </span>
+                        Dominios</a>
                 </li>
                 <li>
                     <a href="{{ route('mas_servicios') }}"><span class="material-symbols-outlined"> library_add </span>
@@ -115,13 +115,13 @@
             @php
                 $archivo = public_path('archivo.txt');
                 $contador = intval(file_get_contents($archivo));
-
+                
                 $file = fopen($archivo, 'w');
                 fwrite($file, $contador + 1 . PHP_EOL);
                 fclose($file);
-
+                
                 $file = fopen($archivo, 'r');
-
+                
             @endphp
             <div class="Contadores">
                 <p class="CVisitas">
@@ -263,6 +263,21 @@
             </div>
         </footer>
     </footer>
+    <!-- Start of ChatBot (www.chatbot.com) code -->
+    <script type="text/javascript">
+        window.__be = window.__be || {};
+        window.__be.id = "6461cd7789d67e00072d44d5";
+        (function() {
+            var be = document.createElement('script');
+            be.type = 'text/javascript';
+            be.async = true;
+            be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +
+                'cdn.chatbot.com/widget/plugin.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(be, s);
+        })();
+    </script>
+    <!-- End of ChatBot code -->
 </body>
 
 </html>

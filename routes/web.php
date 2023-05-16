@@ -39,13 +39,13 @@ Route::resource('clientes', clientesController::class)->middleware('auth');
 Route::resource('servicios', serviciosController::class)->middleware('auth');
 Route::resource('registros', registrosController::class)->middleware('auth');
 Route::resource('noticias', noticiasController::class)->middleware('auth');
-Route::resource('sugerencias', sugerenciasController::class)->middleware('auth');
+Route::resource('sugerencias', sugerenciasController::class);
 
 
 //GET
 Route::get('dashboard', [registrosController::class, 'mostrarRegistros'])->name('dashboard')->middleware('auth');
 Route::get('todo', [noticiasController::class, 'indexGuest']);
-Route::get('usrservicios', [serviciosController::class, 'indexall']);
+Route::get('/', [serviciosController::class, 'indexall']);
 Route::get('usrservicios/{id}', [ServiciosController::class, 'findService'])->name('users.servicio');
 Route::get('findRegister', [registrosController::class, 'findregister'])->name('findRegister');
 Route::get('export/{id}', [registrosController::class, 'export'])->name('export');
@@ -62,4 +62,3 @@ Route::post('login', [loginController::class, 'login']);
 Route::post('logout', [loginController::class, 'logout']);
 Route::post('clientRegister', [clientesController::class, 'register'])->name('clientRegister');
 Route::post('hireService', [registrosController::class, 'hireService'])->name('hireService');
-Route::post('send', [ChatBotController::class, 'sendChat']);
