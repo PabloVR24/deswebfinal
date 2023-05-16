@@ -22,6 +22,7 @@
         margin: 0;
         padding: 0;
         font-family: 'Gilroy-Regular', sans-serif;
+        background-color: #f76666;
     }
 
     .container {
@@ -29,13 +30,30 @@
         text-align: center;
     }
 
-    h1 {
+    input {
+        text-align: center;
+        align-content: center;
+        margin: 1%;
+        width: 35%;
+        padding: .5%;
+    }
+
+    h2 {
         font-family: 'Gilroy-Bold', sans-serif;
         font-size: 10vh;
+        padding: 10px;
+        padding-bottom: 15px;
+        text-align: center;
+        color: white;
+        -webkit-text-stroke: 1.5px black;
+        background-color: #f76666;
+        width: 100%;
+        margin: 0%;
+
     }
 
     .btn-details {
-        color: white;
+        color: #762424;
         width: 30vh;
         height: 8vh;
         border: none;
@@ -71,7 +89,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #ce2929;
+        background: #762424;
         border-radius: .5rem;
     }
 
@@ -82,11 +100,30 @@
     nav {
         position: fixed;
         top: 0;
-        background-color: #3a0505
+        background-color: #f76666;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .Entrar {
+        background-color: #5d2626;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: black 1px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 1%;
+    }
+
+    .Entrar:hover {
+        background-color: #762424;
+        color: #ffffff;
     }
 
     .material-symbols-outlined {
-        color: white;
+        color: #762424;
         transition: color 0.2s ease;
     }
 
@@ -95,7 +132,7 @@
     }
 
     .navbar-brand {
-        color: white;
+        color: #762424;
         transition: color 0.2s ease;
     }
 
@@ -104,21 +141,27 @@
     }
 
     .nav-link {
-        color: white;
+        color: #762424;
     }
 
     .nav-link:hover {
         color: #762424;
     }
 
-    h1 {}
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+    }
 </style>
 
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
 
-            <button style="color:white"class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <button style="color:#911506"class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -176,7 +219,7 @@
 
 </body>
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-white text-muted">
+{{-- <footer class="text-center text-lg-start bg-white text-muted">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
 
@@ -288,7 +331,7 @@
     </div>
     <!-- Copyright -->
 </footer>
-<!-- Footer -->
+<!-- Footer --> --}}
 
 
 </html>

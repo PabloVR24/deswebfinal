@@ -1,7 +1,7 @@
 @extends('admin.navbar')
 
 @section('contenido')
-    <h2>LogIn</h2>
+    <h2>LogIn <br> Administradores</h2>
     <ul>
         @foreach ($errors->all() as $error)
             <li>{{ $error }}</li>
@@ -9,8 +9,8 @@
     </ul>
     <form action="" method="POST">
         @csrf
-        <input type="text" name="email" autofocus value="{{old('email')}}" placeholder="username"><br>
-        <input type="text" name="password" placeholder="password"><br>
-        <button type="submit">LogIn</button>
+        <input type="text" name="email" autofocus value="{{old('email')}}" placeholder="Usuario"><br>
+        <input type="text" name="password" placeholder="Contraseña"><br>
+        <button class="Entrar" type="submit">Entrar</button>
     </form>
 @endsection

@@ -57,7 +57,7 @@ body {
 
 .navH {
     grid-area: navbar;
-    margin-left: 50%;
+    margin-left: 45%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -562,5 +562,5 @@ textarea {
 
     nav {
         text-align: center;
-      }
+    }
 }
