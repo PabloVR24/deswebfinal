@@ -22,7 +22,7 @@
         margin: 0;
         padding: 0;
         font-family: 'Gilroy-Regular', sans-serif;
-        background-color: #f76666;
+        background-color: #ffffff;
     }
 
     .container {
@@ -103,9 +103,7 @@
         background-color: #f76666;
     }
 
-    .nav-link {
-        display: none;
-    }
+
 
     .Entrar {
         background-color: #5d2626;
