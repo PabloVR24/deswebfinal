@@ -112,7 +112,6 @@ class registrosController extends Controller
     }
 
 
-
     public function destroy(string $id)
     {
         $registro = registros::find($id);
