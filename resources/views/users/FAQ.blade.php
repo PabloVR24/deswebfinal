@@ -50,39 +50,39 @@
         </head>
 
         <body>
-            <button class="accordion">¿Cuáles son los planes de hosting que ofrecen?</button>
+            <button class="accordion"><i class="fa-solid fa-square-question" style="color: #ffffff;"></i> ¿Cuáles son los planes de hosting que ofrecen?</button>
             <div class="panel">
                 <p>Ofrecemos una variedad de planes de hosting, desde hosting compartido hasta servidores dedicados. Puedes
                     encontrar más información detallada sobre nuestros planes en nuestra página de precios.</p>
             </div>
 
-            <button class="accordion">¿Cómo puedo transferir mi sitio web a StellarHost?</button>
+            <button class="accordion"><i class="fa-solid fa-square-question" style="color: #ffffff;"></i> ¿Cómo puedo transferir mi sitio web a StellarHost?</button>
             <div class="panel">
                 <p>Transferir tu sitio web a StellarHost es fácil. Nuestro equipo de soporte técnico te guiará a través del
                     proceso de migración y te ayudará a transferir tus archivos y bases de datos sin problemas.</p>
             </div>
 
-            <button class="accordion">¿Qué opciones de seguridad ofrecen para proteger mi sitio web?</button>
+            <button class="accordion"><i class="fa-solid fa-square-question" style="color: #ffffff;"></i> ¿Qué opciones de seguridad ofrecen para proteger mi sitio web?</button>
             <div class="panel">
                 <p>En StellarHost, nos tomamos la seguridad en serio. Ofrecemos diversas opciones de seguridad, como
                     certificados SSL, firewall de aplicaciones web (WAF) y copias de seguridad automáticas, para proteger tu
                     sitio web contra amenazas en línea.</p>
             </div>
-            <button class="accordion">¿Cuál es el tiempo de actividad garantizado?</button>
+            <button class="accordion"><i class="fa-solid fa-square-question" style="color: #ffffff;"></i> ¿Cuál es el tiempo de actividad garantizado?</button>
             <div class="panel">
                 <p>En StellarHost, garantizamos un tiempo de actividad del 99.9%. Nuestra infraestructura robusta y nuestros
                     servidores de alta calidad nos permiten ofrecer un servicio confiable y mantener tu sitio web en línea
                     en todo momento.</p>
             </div>
 
-            <button class="accordion">¿Puedo instalar aplicaciones populares como WordPress?</button>
+            <button class="accordion"><i class="fa-solid fa-square-question" style="color: #ffffff;"></i> ¿Puedo instalar aplicaciones populares como WordPress?</button>
             <div class="panel">
                 <p>Sí, en StellarHost ofrecemos instaladores automáticos y compatibilidad con una amplia gama de
                     aplicaciones populares, incluyendo WordPress, Joomla, Drupal y muchas otras. Puedes instalar estas
                     aplicaciones con solo unos pocos clics desde tu panel de control.</p>
             </div>
 
-            <button class="accordion">¿Cuál es su política de respaldo de datos?</button>
+            <button class="accordion"><i class="fa-solid fa-square-question" style="color: #ffffff;"></i> ¿Cuál es su política de respaldo de datos?</button>
             <div class="panel">
                 <p>En StellarHost, realizamos copias de seguridad automáticas de tus datos de forma regular. Esto garantiza
                     que en caso de cualquier problema o pérdida de datos, podamos restaurar tu sitio web a un estado

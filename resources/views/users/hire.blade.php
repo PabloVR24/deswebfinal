@@ -21,7 +21,7 @@
             @enderror
             <br>
             <div class="" style="text-align: center">
-                <button type="submit" style="text-align: center" class="btn btn-primary">Contratar</button>
+                <button type="submit" style="text-align: center" class="btn btn-primary"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> Contratar</button>
             </div>
         </form>
     </div>

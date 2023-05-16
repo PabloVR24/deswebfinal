@@ -46,6 +46,12 @@ class serviciosController extends Controller
         return view('users.servidor_dedicado', ['servicios' => $serviciosHosting]);
     }
 
+    public function indexOthers()
+    {
+        $serviciosHosting = servicios::where('categoria', 'CLOUD')->get();
+        return view('users.mas_servicios', ['servicios' => $serviciosHosting]);
+    }
+
     public function store(Request $request)
     {
         $request->validate([

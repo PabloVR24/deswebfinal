@@ -14,6 +14,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    @extends('extends.fontawesome')
 </head>
 
 <body>
@@ -66,6 +67,9 @@
             <h4 class="navVTit">Asistencia tecnica 24/7</h4>
             <ul>
                 <li>
+                    <a href="{{ route('findRegister') }}"><span class="material-symbols-outlined"> search</span> Busqueda de Ticket</a>
+                </li>
+                <li>
                     <a href="{{ route('web_hosting') }}"><span class="material-symbols-outlined"> language</span> Web
                         Hosting</a>
                 </li>
@@ -110,6 +114,10 @@
                 <li>
                     <a href="{{ route('FAQ') }}"><span class="material-symbols-outlined"> psychology_alt </span>
                         FAQ</a>
+                </li>
+                <li>
+                    <a href="{{ route('login') }}"><span class="material-symbols-outlined"> key </span>
+                        Admin</a>
                 </li>
             </ul>
             @php

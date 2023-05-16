@@ -30,12 +30,15 @@
     <div class="m-5"style="text-align: center;">
         <form action="{{ route('exportsrv', ['id' => $servicio->id]) }}">
             <input type="text" name="id" hidden value="{{ $servicio->id }}">
-            <input type="submit" class="btn btn-danger" value="Generar PDF"
-                style="width: 13rem; height: 5rem; font-weight: bold; font-size: 1.5rem;">
+            <button type="submit" class="btn btn-danger" style="width: 13rem; height: 5rem; font-weight: bold; font-size: 1.5rem;">
+                <i class="fa-solid fa-print" style="color: #ffffff;"></i>
+                Generar PDF
+            </button>
+            
             <div class="btn btn-success d-flex justify-content-center align-items-center"
                 style="width: 13rem; height: 5rem;">
                 <a href="{{ route('client') }}"
-                    style="color: white; text-decoration: none; font-weight: bold; font-size: 1.5rem;">Contratar</a>
+                    style="color: white; text-decoration: none; font-weight: bold; font-size: 1.5rem;"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> Contratar</a>
             </div>
         </form>
     </div>

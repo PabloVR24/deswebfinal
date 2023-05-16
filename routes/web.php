@@ -56,6 +56,7 @@ Route::get('web_hosting', [serviciosController::class, 'indexHosting'])->name('w
 Route::get('dominios', [serviciosController::class, 'indexDomains'])->name('dominios');
 Route::get('servidor_dedicado', [serviciosController::class, 'indexDedicated'])->name('servidor_dedicado');
 Route::get('allServices', [serviciosController::class, 'allServices'])->name('allServices');
+Route::get('mas_servicios', [serviciosController::class, 'indexOthers'])->name('mas_servicios');
 
 //POST
 Route::post('login', [loginController::class, 'login']);

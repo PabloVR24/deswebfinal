@@ -149,6 +149,12 @@
         var data = conteo.map(function(item) {
             return item.total_registros_usuario;
         });
+        var customColors = [];
+            for (var i = 0; i < conteo.length; i++) {
+                // Generar un color aleatorio en formato hexadecimal
+                var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                customColors.push(color);
+            }
 
         var ctx = document.getElementById('chart_clients').getContext('2d');
         var myChart = new Chart(ctx, {
@@ -158,7 +164,7 @@
                 datasets: [{
                     label: 'Total de registros por cliente',
                     data: data,
-                    backgroundColor: 'rgba(75, 196, 180, 1)',
+                    backgroundColor: customColors,
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 1
                 }]
@@ -210,6 +216,12 @@
         var data = conteo.map(function(item) {
             return item.total_registros_servicios;
         });
+        var customColors = [];
+            for (var i = 0; i < conteo.length; i++) {
+                // Generar un color aleatorio en formato hexadecimal
+                var color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                customColors.push(color);
+            }
 
         var ctx = document.getElementById('chart_services').getContext('2d');
         var myChart = new Chart(ctx, {
@@ -219,7 +231,7 @@
                 datasets: [{
                     label: 'Total de registros por servicio',
                     data: data,
-                    backgroundColor: 'rgba(150, 138, 180, 15)',
+                    backgroundColor: customColors,
                     borderColor: 'rgba(51, 245, 244, 41)',
                     borderWidth: 1
                 }]

@@ -7,7 +7,10 @@
             <input type="text" name="texto" id="texto" class="form-control" value="{{ $texto }}"
                 placeholder="Ingresa tu numero de Ticket">
             <br>
-            <input type="submit" value="Buscar" class="btn btn-danger">
+            <button type="submit" class="btn btn-success">
+                <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+                Buscar
+            </button>
         </form>
 
         <table id="alumnosTable" class="mt-5">
