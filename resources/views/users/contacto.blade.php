@@ -1,11 +1,4 @@
 @extends('users.template')
-<<<<<<< HEAD
-
-@section('contenido')
-    <div style="text-align: center;">
-        <h1 style="text-align: center; margin: 5%; font-size: 300%">Aquí ira lo del correo</h1>
-
-=======
 @section('contenido')
     <div class="m-5" style="text-align: center; align-items: center;">
         <h3>Si deseas mejor atencion contactanos via:</h3>
@@ -47,6 +40,5 @@
 
             <button type="submit" class="btn btn-primary">Enviar Correo</button>
         </form>
->>>>>>> 87b545d31a8f7d580abbc2f05c9fb1dbd4ec66b6
     </div>
 @endsection
