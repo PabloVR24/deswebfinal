@@ -4,9 +4,11 @@
     <?php
     use GuzzleHttp\Client;
     use Carbon\Carbon;
-    $fecha = Carbon::now();
+    $fecha = Carbon::now()
+        ->subDay()
+        ->toDateString();
     
-    $url = 'https://newsapi.org/v2/everything?q=tech&from=2023-05-13&to=2023-05-13&sortBy=popularity&apiKey=15981b3988bc425693188994981f8b2f';
+    $url = 'https://newsapi.org/v2/everything?q=tech&from=' . $fecha . '&to=' . $fecha . '&sortBy=popularity&apiKey=15981b3988bc425693188994981f8b2f';
     $client = new Client();
     $response = $client->get($url);
     $datos = json_decode($response->getBody());
@@ -104,13 +106,13 @@
         <table id="newsTable" class="display">
             <thead>
                 <tr>
-                    <th style="width: 5%;">id</th>
-                    <th style="width: 15%;">Titulo</th>
+                    <th style="width: 2%;">id</th>
+                    <th style="width: 5%;">Titulo</th>
                     <th style="width: 10%;">Author</th>
-                    <th style="width: 20%;">URL</th>
-                    <th style="width: 20%;">IMAGEN:URL</th>
-                    <th style="width: 15%;">Publicado</th>
-                    <th style="width: 15%;">Eliminar</th>
+                    <th style="width: 10%;">URL</th>
+                    <th style="width: 10%;">IMAGEN:URL</th>
+                    <th style="width: 5%;">Publicado</th>
+                    <th style="width: 2%;">Eliminar</th>
                 </tr>
             </thead>
             <tbody id="tablaRegistros">
@@ -150,7 +152,6 @@
                                 <li>
                                     <h4>{{ $noticia->title }}</h4>
                                 </li>
-                                <li> {{ $noticia->url }}</li>
                                 <li> {{ $noticia->publishedAt }}</li>
                             </ul>
                         </td>
