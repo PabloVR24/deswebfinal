@@ -32,6 +32,7 @@
                 <li><a href="{{ route('soluciones') }}">Soluciones</a></li>
                 <li><a href="{{ route('clientesSH') }}">Clientes</a></li>
                 <li><a href="{{ route('contacto') }}">Contacto</a></li>
+                <li><a href="{{ route('login') }}">⚙️</a></li>
             </ul>
         </nav>
     </header>
@@ -115,13 +116,13 @@
             @php
                 $archivo = public_path('archivo.txt');
                 $contador = intval(file_get_contents($archivo));
-                
+
                 $file = fopen($archivo, 'w');
                 fwrite($file, $contador + 1 . PHP_EOL);
                 fclose($file);
-                
+
                 $file = fopen($archivo, 'r');
-                
+
             @endphp
             <div class="Contadores">
                 <p class="CVisitas">

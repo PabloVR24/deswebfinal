@@ -552,11 +552,12 @@ textarea {
 
     .navH {
         grid-area: navbar;
-        margin-left: 11%;
+        margin-left: 17%;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         width: 100%;
+        transform: scale(0.95);
     }
 
     nav {
