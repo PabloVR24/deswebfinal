@@ -15,13 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('autor');
             $table->string('contenido');
-            $table->string('calificacion');
             $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Run the migrations.
      */
     public function down(): void
     {

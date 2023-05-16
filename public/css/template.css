@@ -81,7 +81,7 @@ body {
 }
 
 .navH li {
-    margin: 0 3px;
+    margin: 0px 3px;
     color: transparent;
 }
 
@@ -444,11 +444,12 @@ textarea {
     }
 
     .navH {
-        margin-left: 1%;
+        margin-left: 0%;
+        width: 100%;
     }
 
     .navV li {
-        margin: 2% 0;
+        margin: 2% 0%;
     }
 
     .Contadores {
@@ -511,9 +512,9 @@ textarea {
     }
 
     .FooterH3Redes {
-        transform: scale(0.70);
-        margin-left: .5%;
-        margin-right: .5%;
+        transform: scale(0.7);
+        margin-left: 0.5%;
+        margin-right: 0.5%;
     }
 
     .form-control {
@@ -537,4 +538,28 @@ textarea {
         margin-right: 1%;
         margin-bottom: 2%;
     }
+
+    .navH ul {
+        list-style: none;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        transform: scale(0.75);
+        list-style-type: none;
+    }
+
+    .navH {
+        grid-area: navbar;
+        margin-left: 11%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav {
+        text-align: center;
+      }
 }
