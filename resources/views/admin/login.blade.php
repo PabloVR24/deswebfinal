@@ -6,7 +6,9 @@
         <h2>LogIn <br> Administradores</h2>
         <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <div class="alert alert-warning" style="width: 50%; text-align: center;margin: auto;"  role="alert">
+                    <h6>{{ $error }}</h6>
+                </div>
             @endforeach
         </ul>
         <form action="" method="POST">

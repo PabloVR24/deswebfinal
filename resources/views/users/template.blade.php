@@ -20,8 +20,9 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <img src="{{ URL::asset('images/logo.png') }}" id="logo" alt="StellarHost Logo" />
-        <button id="HelpBut"><b>Ayuda en línea 💬 </b></button>
+        <a href="/"><img src="{{ URL::asset('images/logo.png') }}" id="logo" alt="StellarHost Logo" style="width: 35%;"/></a>
+
+        {{-- <button id="HelpBut"><b>Ayuda en línea 💬 </b></button> --}}
         <p id="ConVent">
             <b>Contacto de Ventas:</b><br /><b>📞 (844) 107 1532</b>
         </p>
@@ -52,11 +53,13 @@
                 <img src="{{ URL::asset('images/SLIDER/slider3.png') }}" class="d-block w-100" alt="...">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -68,7 +71,8 @@
             <h4 class="navVTit">Asistencia tecnica 24/7</h4>
             <ul>
                 <li>
-                    <a href="{{ route('findRegister') }}"><span class="material-symbols-outlined"> search</span> Busqueda de Ticket</a>
+                    <a href="{{ route('findRegister') }}"><span class="material-symbols-outlined"> search</span>
+                        Busqueda de Ticket</a>
                 </li>
                 <li>
                     <a href="{{ route('web_hosting') }}"><span class="material-symbols-outlined"> language</span> Web
@@ -120,13 +124,13 @@
             @php
                 $archivo = public_path('archivo.txt');
                 $contador = intval(file_get_contents($archivo));
-
+                
                 $file = fopen($archivo, 'w');
                 fwrite($file, $contador + 1 . PHP_EOL);
                 fclose($file);
-
+                
                 $file = fopen($archivo, 'r');
-
+                
             @endphp
             <div class="Contadores">
                 <p class="CVisitas">

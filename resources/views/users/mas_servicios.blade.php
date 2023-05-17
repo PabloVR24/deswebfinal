@@ -46,7 +46,7 @@
                         @endforeach
                         <div class="center" style="text-align: center">
                             <a href="{{ route('users.servicio', ['id' => $servicio->id]) }}"
-                                class="btn btn-light mt-5"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i> Detalles</a>
+                                class="btn btn-light mt-5"><i class="fa-solid fa-circle-info" style="color: #000000;"></i> Detalles</a>
                         </div>
 
                     </div>

@@ -7,8 +7,8 @@
     </div>
     <style>
         .card_styles {
-            background: rgb(63, 94, 251);
-            background: radial-gradient(circle, rgba(63, 94, 251, 0.7540266106442577) 21%, rgba(252, 70, 107, 0.756827731092437) 97%);
+            background: rgb(42, 252, 18);
+            background: linear-gradient(90deg, rgba(42, 252, 18, 0.510329131652661) 5%, rgba(241, 255, 0, 0.59156162464986) 99%);
         }
     </style>
     <div class="d-flex flex-wrap justify-content-center">
@@ -45,8 +45,8 @@
                             <li class="list" style="list-style: none; font-size: 1.8vh">{{ $beneficio }}</li>
                         @endforeach
                         <div class="center" style="text-align: center">
-                            <a href="{{ route('users.servicio', ['id' => $servicio->id]) }}"
-                                class="btn btn-light mt-5"><i class="fa-solid fa-circle-info" style="color: #000000;"></i> Detalles</a>
+                            <a href="{{ route('users.servicio', ['id' => $servicio->id]) }}" class="btn btn-light mt-5"><i
+                                    class="fa-solid fa-circle-info" style="color: #000000;"></i> Detalles</a>
                         </div>
 
                     </div>

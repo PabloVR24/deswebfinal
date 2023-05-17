@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;700;800&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+.main h1 h2 h3 h4 h5 h6{
+    font-family: 'Manrope', sans-serif;
 }
 
 body {
